@@ -130,7 +130,7 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
 <div id="view-wm" style="display:none"></div>
 <div id="modal-container"></div>
 </div>
-
+ 
 <script>
 const ESTADOS={
   en_espera:{label:'En espera',color:'espera',bg:'#F1EFE8',c:'#5F5E5A'},
@@ -146,12 +146,12 @@ const DOPTS=['pendiente','incompleto','completo'];
 const FIXED_ITEMS=['Documentación','GCC','Matriz','Flujo de caja','Informe'];
 const KEY_C='tracker:prod:clients',KEY_A='tracker:prod:archived',KEY_D='tracker:prod:devueltos';
 let clients=[],archived=[],devueltos=[],activeTab='activos',openSections={};
-
+ 
 function lsGet(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):[];}catch(e){return[];}}
 function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 function load(){clients=lsGet(KEY_C);archived=lsGet(KEY_A);devueltos=lsGet(KEY_D);render();}
 function save(){lsSet(KEY_C,clients);lsSet(KEY_A,archived);lsSet(KEY_D,devueltos);}
-
+ 
 function exportData(){
   const data=JSON.stringify({clients,archived,devueltos},null,2);
   const blob=new Blob([data],{type:'application/json'});
@@ -174,7 +174,7 @@ function importData(input){
   };
   r.readAsText(f);input.value='';
 }
-
+ 
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,5);}
 function hoy(){return new Date().toISOString().split('T')[0];}
 function diasDesde(f){if(!f)return null;return Math.floor((Date.now()-new Date(f).getTime())/(864e5));}
@@ -192,7 +192,7 @@ function slaInfo(c){
 }
 function checkProgress(c){const items=c.checklist||[];if(!items.length)return 0;return Math.round(items.filter(x=>x.done).length/items.length*100);}
 function defaultChecklist(){return FIXED_ITEMS.map(l=>({id:uid(),label:l,done:false,comment:'',fixed:true}));}
-
+ 
 function render(){renderStats();if(activeTab==='activos')renderActivos();else if(activeTab==='devueltos')renderDevueltos();else renderWM();}
 function renderStats(){
   const venc=clients.filter(c=>slaInfo(c).cls==='sla-over').length;
@@ -206,7 +206,7 @@ function renderStats(){
   `;
 }
 function renderActivos(){const el=document.getElementById('view-activos');if(!clients.length){el.innerHTML='<div class="empty">No hay clientes activos.</div>';return;}el.innerHTML=clients.map((c,i)=>cardHTML(c,i)).join('');}
-
+ 
 function cardHTML(c,i){
   const est=ESTADOS[c.estado]||ESTADOS.en_espera;
   const sla=slaInfo(c);const hist=getHistory(c.nit);
@@ -247,7 +247,7 @@ function cardHTML(c,i){
           <input type="date" value="${c.fechaInicio||''}" ${c.estado==='en_espera'?'disabled style="opacity:0.4"':''} onchange="updateField('${c.id}','fechaInicio',this.value)">
         </div>
         <div class="field-group"><label>Doc. completa desde <span style="font-size:10px;color:#aaa">(activa SLA)</span></label>
-          <input type="date" id="fechadoc-${c.id}" value="${c.fechaDocCompleta||''}" ${!docEsCompleta(c)||c.estado==='en_espera'?'disabled style="opacity:0.4"':''} onchange="updateField('${c.id}','fechaDocCompleta',this.value)">
+          <input type="date" id="fechadoc-${c.id}" value="${c.fechaDocCompleta||''}" ${!docEsCompleta(c)?'disabled style="opacity:0.4"':''} onchange="updateField('${c.id}','fechaDocCompleta',this.value)">
         </div>
       </div>
       <div class="field-group" style="margin-bottom:10px"><label>GCC</label>
@@ -311,16 +311,16 @@ function cardHTML(c,i){
   </div>
 </div>`;
 }
-
+ 
 function renderImages(c){return(c.imagenes||[]).map(img=>`<div class="info-img-wrap"><img src="${img.data}" alt="imagen"><button class="info-img-del" onclick="event.stopPropagation();removeImage('${c.id}','${img.id}')">✕</button></div>`).join('');}
 function handleFiles(cid,files){Array.from(files).forEach(f=>{if(!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=e=>addImage(cid,e.target.result);r.readAsDataURL(f);});}
 function handleDrop(cid,e){e.preventDefault();handleFiles(cid,e.dataTransfer.files);}
 function addImage(cid,data){const c=clients.find(x=>x.id===cid);if(!c)return;if(!c.imagenes)c.imagenes=[];c.imagenes.push({id:uid(),data});save();const el=document.getElementById('imgs-'+cid);if(el)el.innerHTML=renderImages(c);const hint=document.querySelector(`#dropzone-${cid} .info-drop-hint`);if(hint)hint.remove();}
 function removeImage(cid,imgId){const c=clients.find(x=>x.id===cid);if(!c||!c.imagenes)return;c.imagenes=c.imagenes.filter(x=>x.id!==imgId);save();const el=document.getElementById('imgs-'+cid);if(el)el.innerHTML=renderImages(c);}
 function setupPaste(cid){const dz=document.getElementById('dropzone-'+cid);if(!dz||dz._pasteReady)return;dz._pasteReady=true;dz.addEventListener('paste',e=>{const items=e.clipboardData&&e.clipboardData.items;if(!items)return;Array.from(items).forEach(item=>{if(item.type.startsWith('image/')){const f=item.getAsFile();const r=new FileReader();r.onload=ev=>addImage(cid,ev.target.result);r.readAsDataURL(f);}});});}
-
+ 
 function renderChecklist(c){return(c.checklist||[]).map(it=>`<div class="check-item"><div class="check-head"><input type="checkbox" id="cb-${it.id}" ${it.done?'checked':''} onchange="toggleCheck('${c.id}','${it.id}',this.checked)"><label class="check-label${it.done?' done':''}" for="cb-${it.id}">${it.label}</label>${!it.fixed?`<button class="del-check btn-del" onclick="removeCheck('${c.id}','${it.id}')">✕</button>`:''}</div>${!it.done?`<div class="check-comment-row"><input class="check-comment-input" type="text" placeholder="¿Qué falta?" value="${(it.comment||'').replace(/"/g,'&quot;')}" onchange="updateComment('${c.id}','${it.id}',this.value)"></div>`:''}</div>`).join('');}
-
+ 
 function buildTeamsMsg(c){
   const est=ESTADOS[c.estado]||ESTADOS.en_espera;const tipo=TIPOS[c.tipo]||TIPOS.pendiente;const sla=slaInfo(c);
   const items=c.checklist||[];const done=items.filter(x=>x.done);const pend=items.filter(x=>!x.done);
@@ -331,13 +331,13 @@ function buildTeamsMsg(c){
   if(items.length){msg+=`\nChecklist (${done.length}/${items.length}):\n`;done.forEach(x=>{msg+=`[x] ${x.label}\n`;});pend.forEach(x=>{msg+=`[ ] ${x.label}${x.comment?' — '+x.comment:''}\n`;});}
   return msg.trim();
 }
-
+ 
 function toggleCheck(cid,itemId,done){
   const c=clients.find(x=>x.id===cid);if(!c||!c.checklist)return;
   const item=c.checklist.find(x=>x.id===itemId);if(!item)return;
   item.done=done;if(done)item.comment='';
   if(item.label==='Documentación'&&item.fixed){
-    if(done&&!c.fechaDocCompleta&&c.estado!=='en_espera'){c.fechaDocCompleta=hoy();const fd=document.getElementById('fechadoc-'+cid);if(fd){fd.value=c.fechaDocCompleta;fd.disabled=false;fd.style.opacity='1';}}
+    if(done&&!c.fechaDocCompleta){c.fechaDocCompleta=hoy();const fd=document.getElementById('fechadoc-'+cid);if(fd){fd.value=c.fechaDocCompleta;fd.disabled=false;fd.style.opacity='1';}}
     if(!done){c.fechaDocCompleta='';const fd=document.getElementById('fechadoc-'+cid);if(fd){fd.value='';fd.disabled=true;fd.style.opacity='0.4';}}
     refreshSlaBadge(cid);refreshSlaBox(cid);
   }
