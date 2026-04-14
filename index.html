@@ -9,13 +9,12 @@
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;color:#1a1a1a;background:#f5f4f0;min-height:100vh}
 .wrap{max-width:960px;margin:0 auto;padding:1.5rem 1rem}
 .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px}
-.title{font-size:20px;font-weight:600;color:#1a1a1a}
+.title{font-size:20px;font-weight:600}
 .user-pill{font-size:12px;background:#fff;border:0.5px solid #ddd;border-radius:20px;padding:4px 12px;color:#555;cursor:pointer}
 .user-pill:hover{background:#f0efe9}
 .stats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
 .stat{background:#fff;border:0.5px solid #e0ddd5;border-radius:8px;padding:5px 10px;font-size:12px;color:#666}
 .stat b{color:#1a1a1a;font-weight:600}
-.topbtns{display:flex;gap:6px}
 button{border:0.5px solid #ccc;background:#fff;border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;color:#1a1a1a}
 button:hover{background:#f0efe9}
 button.primary{background:#185FA5;color:#B5D4F4;border-color:#185FA5}
@@ -31,20 +30,22 @@ button.primary:hover{background:#0C447C}
 .client-card.cargado{border-left-color:#1D9E75}
 .client-card.devuelto{border-left-color:#E24B4A}
 .priotag{font-size:10px;background:#FAEEDA;color:#854F0B;padding:2px 5px;border-radius:4px;margin-left:4px}
-.card-head{display:flex;align-items:center;gap:6px;padding:10px 12px;cursor:pointer;flex-wrap:wrap}
+.card-head{display:flex;align-items:center;gap:8px;padding:10px 12px;cursor:pointer}
 .card-head:hover{background:#fafaf8}
-.orden{font-size:11px;color:#aaa;min-width:18px}
-.client-name{font-weight:500;font-size:13px;flex:1}
-.nit{font-size:11px;color:#888}
-.head-badges{display:flex;align-items:center;gap:5px;margin-left:auto;flex-wrap:wrap}
+.card-left{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.card-title-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.card-name{font-weight:500;font-size:13px}
+.card-nit{font-size:11px;color:#888}
+.card-roles-row{display:flex;gap:10px;flex-wrap:wrap}
+.role-status{font-size:11px;color:#666}
+.role-status b{color:#1a1a1a}
+.card-right{display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex-shrink:0}
 .badge{font-size:11px;padding:2px 8px;border-radius:10px;white-space:nowrap}
 .sla-ok{background:#EAF3DE;color:#3B6D11}
 .sla-warn{background:#FAEEDA;color:#854F0B}
 .sla-over{background:#FCEBEB;color:#791F1F}
 .sla-paused{background:#F1EFE8;color:#5F5E5A}
 .sla-none{background:#f0efe9;color:#aaa}
-.assign-pill{font-size:10px;padding:2px 7px;border-radius:10px;background:#E6F1FB;color:#185FA5;white-space:nowrap}
-.assign-pill.empty{background:#f5f5f5;color:#aaa;font-style:italic}
 .arrow{font-size:10px;color:#aaa;transition:transform 0.2s}
 .card-body{padding:12px 16px;border-top:0.5px solid #e0ddd5;display:none}
 .card-body.open{display:block}
@@ -54,17 +55,20 @@ button.primary:hover{background:#0C447C}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .fl{font-size:11px;color:#888;display:block;margin-bottom:3px}
 select,input[type=text],input[type=date]{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:6px 8px;font-size:12px;background:#fff;color:#1a1a1a}
+input:disabled{opacity:0.5;background:#f5f4f0}
 textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10px;font-size:13px;background:#fff;color:#1a1a1a;resize:vertical;min-height:160px;line-height:1.7;font-family:inherit}
-.gcc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.assign-row{display:flex;gap:8px;align-items:center;padding:8px 0;flex-wrap:wrap}
-.assign-box{flex:1;border:0.5px solid #e0ddd5;border-radius:8px;padding:8px 12px;font-size:12px;background:#fafaf8}
+.assign-row{display:flex;gap:8px;align-items:center;padding:8px 0;flex-wrap:wrap;margin-bottom:10px}
+.assign-box{flex:1;border:0.5px solid #e0ddd5;border-radius:8px;padding:8px 12px;font-size:12px;background:#fafaf8;min-width:140px}
 .assign-box .alabel{font-size:10px;color:#888;margin-bottom:2px}
 .assign-box .aname{font-weight:500;color:#1a1a1a}
 .assign-box .aname.empty{color:#aaa;font-style:italic;font-weight:400}
 .btn-asign{font-size:11px;padding:3px 10px;background:#E6F1FB;border-color:#185FA5;color:#185FA5}
-.btn-asign:hover{background:#B5D4F4}
 .btn-desasign{font-size:11px;padding:3px 10px;background:#fff5f5;border-color:#E24B4A;color:#A32D2D}
 .sla-box{background:#f5f4f0;border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.doc-status-box{background:#f5f4f0;border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px}
+.doc-status-box .ds-label{font-size:10px;color:#888;margin-bottom:4px}
+.doc-pending-list{margin-top:8px;border-top:0.5px solid #e0ddd5;padding-top:8px}
+.doc-pending-item{font-size:12px;color:#854F0B;padding:2px 0}
 .check-item{border:0.5px solid #e0ddd5;border-radius:8px;margin-bottom:5px;overflow:hidden}
 .check-head{display:flex;align-items:center;gap:8px;padding:7px 10px}
 .check-head input[type=checkbox]{width:15px;height:15px;cursor:pointer;accent-color:#185FA5;flex-shrink:0}
@@ -85,7 +89,8 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
 .btn-dev{background:#FAEEDA;color:#854F0B;border-color:#EF9F27}
 .btn-wm{background:#0F6E56;color:#9FE1CB;border-color:#0F6E56}
 .btn-copy{background:#EEEDFE;color:#3C3489;border-color:#7F77DD}
-.email-box{background:#f5f4f0;border:0.5px solid #e0ddd5;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;white-space:pre-wrap;line-height:1.6;color:#1a1a1a}
+.btn-iniciar{background:#EAF3DE;color:#3B6D11;border-color:#639922}
+.email-box{background:#f5f4f0;border:0.5px solid #e0ddd5;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;white-space:pre-wrap;line-height:1.6}
 .copy-ok{font-size:11px;color:#3B6D11;margin-left:8px;opacity:0;transition:opacity 0.3s}
 .arch-group-title{font-size:12px;color:#888;font-weight:500;margin-bottom:6px;padding-bottom:4px;border-bottom:0.5px solid #e0ddd5}
 .arch-item{border:0.5px solid #e0ddd5;border-radius:8px;margin-bottom:4px;overflow:hidden}
@@ -101,22 +106,23 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
 .mfield{margin-bottom:10px}
 .mfield label{font-size:12px;color:#888;display:block;margin-bottom:4px}
 .mbtns{display:flex;gap:8px;justify-content:flex-end;margin-top:1rem}
-.loading{text-align:center;color:#888;padding:2rem;font-size:13px}
 .sync-dot{width:8px;height:8px;border-radius:50%;background:#1D9E75;display:inline-block;margin-right:6px}
 .sync-dot.off{background:#E24B4A}
+.role-tag{font-size:10px;padding:1px 6px;border-radius:4px;margin-left:4px}
+.role-analista{background:#FAEEDA;color:#854F0B}
+.role-auxiliar{background:#E6F1FB;color:#185FA5}
+.role-director{background:#EEEDFE;color:#3C3489}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="header">
     <span class="title">Tracker Crédito</span>
-    <div id="user-display" style="display:flex;align-items:center;gap:8px">
-      <span class="sync-dot" id="sync-dot" title="Conectado"></span>
-      <span class="user-pill" onclick="showUserModal()" id="user-pill">Cargando...</span>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="sync-dot" id="sync-dot"></span>
+      <span class="user-pill" onclick="showUserModal(false)" id="user-pill">Cargando...</span>
     </div>
-    <div class="topbtns">
-      <button class="primary" onclick="showNewCaseModal()">+ Nuevo caso</button>
-    </div>
+    <button class="primary" onclick="showNewCaseModal()">+ Nuevo caso</button>
   </div>
   <div class="stats" id="stats"></div>
   <div class="tabs">
@@ -124,25 +130,30 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
     <button class="tab" onclick="switchTab('devueltos',this)">Devueltos</button>
     <button class="tab" onclick="switchTab('wm',this)">Cargados en WM</button>
   </div>
-  <div id="view-activos"><div class="loading">Cargando casos...</div></div>
+  <div id="view-activos"><div class="empty">Cargando...</div></div>
   <div id="view-devueltos" style="display:none"></div>
   <div id="view-wm" style="display:none"></div>
   <div id="modals"></div>
 </div>
- 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 const SURL = 'https://mkiljgppfvwannvyrqvb.supabase.co';
 const SKEY = 'sb_publishable_GoPISZcO8JTOmqcveqyJVA_OqttydND';
 const sb = supabase.createClient(SURL, SKEY);
  
-const ESTADOS = {
+const ESTADOS_ANALISTA = {
   en_espera:{label:'En espera',color:'espera',bg:'#F1EFE8',c:'#5F5E5A'},
-  en_proceso:{label:'En proceso',color:'proceso',bg:'#FAEEDA',c:'#854F0B'},
+  en_proceso:{label:'En proceso de estudio',color:'proceso',bg:'#FAEEDA',c:'#854F0B'},
   por_comite:{label:'Por presentar a comité',color:'comite',bg:'#EEEDFE',c:'#3C3489'},
   esperando_decision:{label:'Esperando decisión',color:'decision',bg:'#E6F1FB',c:'#185FA5'},
   cargado_wm:{label:'Cargado en WM',color:'cargado',bg:'#E1F5EE',c:'#085041'},
   devuelto:{label:'Devuelto',color:'devuelto',bg:'#FCEBEB',c:'#791F1F'}
+};
+const DOC_ESTADOS = {
+  sin_iniciar:{label:'Sin iniciar',bg:'#f0efe9',c:'#aaa'},
+  en_revision:{label:'En revisión',bg:'#E6F1FB',c:'#185FA5'},
+  incompleto:{label:'Incompleto',bg:'#FAEEDA',c:'#854F0B'},
+  completo:{label:'Completo',bg:'#EAF3DE',c:'#3B6D11'}
 };
 const TIPOS = {
   sin_flujo:{label:'Comité emp. sin flujo de caja',sla:1},
@@ -162,235 +173,246 @@ const ITEMS_AUXILIAR = [
   'PANTALLAZO RADICACIÓN WM – GRUPOS CONECTADOS','CONCEPTO SARLAFT POR COMPOSICIÓN ACCIONARIA'
 ];
  
-let user = {nombre:'', rol:''};
-let cases = [];
-let checklists = {};
-let activeTab = 'activos';
-let openCards = {};
-let openSecs = {};
+let user = {nombre:'',rol:''};
+let cases = [], checklists = {}, activeTab = 'activos', openCards = {}, openSecs = {};
  
-// ---- USER ----
-function loadUser() {
-  const s = localStorage.getItem('tc_user');
-  if (s) { user = JSON.parse(s); updateUserPill(); return true; }
-  return false;
+// USER
+function loadUser(){const s=localStorage.getItem('tc_user2');if(s){user=JSON.parse(s);updatePill();return true;}return false;}
+function saveUser(n,r){user={nombre:n,rol:r};localStorage.setItem('tc_user2',JSON.stringify(user));updatePill();}
+function updatePill(){
+  const p=document.getElementById('user-pill');
+  const tags={analista:'role-analista',auxiliar:'role-auxiliar',director:'role-director'};
+  if(p)p.innerHTML=user.nombre+' <span class="role-tag '+(tags[user.rol]||'')+'">'+user.rol+'</span>';
 }
-function saveUser(n, r) { user = {nombre:n, rol:r}; localStorage.setItem('tc_user', JSON.stringify(user)); updateUserPill(); }
-function updateUserPill() {
-  const pill = document.getElementById('user-pill');
-  if (pill) pill.textContent = user.nombre + ' · ' + user.rol;
-}
-function showUserModal(required) {
-  document.getElementById('modals').innerHTML = `
-  <div class="modal-bg" ${required?'':'onclick="if(event.target===this)closeModal()"'}>
-    <div class="modal">
-      <h3>${required ? 'Bienvenido — ¿Quién eres?' : 'Cambiar perfil'}</h3>
-      <div class="mfield"><label>Tu nombre</label><input type="text" id="u-nombre" value="${user.nombre}" placeholder="Ej: Laura Camila"></div>
-      <div class="mfield"><label>Rol</label>
-        <select id="u-rol">
-          <option value="analista" ${user.rol==='analista'?'selected':''}>Analista</option>
-          <option value="auxiliar" ${user.rol==='auxiliar'?'selected':''}>Auxiliar</option>
-          <option value="practicante" ${user.rol==='practicante'?'selected':''}>Practicante</option>
-        </select>
-      </div>
-      <div class="mbtns">
-        ${required?'':'<button onclick="closeModal()">Cancelar</button>'}
-        <button class="primary" onclick="confirmUser()">Guardar</button>
-      </div>
+function showUserModal(required){
+  document.getElementById('modals').innerHTML=`<div class="modal-bg" ${required?'':'onclick="if(event.target===this)closeModal()"'}><div class="modal">
+    <h3>${required?'Bienvenido — ¿Quién eres?':'Cambiar perfil'}</h3>
+    <div class="mfield"><label>Tu nombre</label><input type="text" id="u-nombre" value="${user.nombre}" placeholder="Ej: Laura Camila"></div>
+    <div class="mfield"><label>Rol</label>
+      <select id="u-rol">
+        <option value="analista" ${user.rol==='analista'?'selected':''}>Analista</option>
+        <option value="auxiliar" ${user.rol==='auxiliar'?'selected':''}>Auxiliar</option>
+        <option value="director" ${user.rol==='director'?'selected':''}>Director</option>
+      </select>
     </div>
-  </div>`;
+    <div class="mbtns">
+      ${required?'':'<button onclick="closeModal()">Cancelar</button>'}
+      <button class="primary" onclick="confirmUser()">Guardar</button>
+    </div>
+  </div></div>`;
 }
-function confirmUser() {
-  const n = document.getElementById('u-nombre').value.trim();
-  const r = document.getElementById('u-rol').value;
-  if (!n) return alert('Escribe tu nombre');
-  saveUser(n, r); closeModal(); render();
+function confirmUser(){
+  const n=document.getElementById('u-nombre').value.trim();
+  const r=document.getElementById('u-rol').value;
+  if(!n)return alert('Escribe tu nombre');
+  saveUser(n,r);closeModal();render();
 }
  
-// ---- SUPABASE CRUD ----
-async function loadAll() {
-  try {
-    const { data: casosData } = await sb.from('casos').select('*').order('orden', {ascending: true});
-    const { data: clData } = await sb.from('caso_checklist').select('*').order('orden', {ascending: true});
-    cases = casosData || [];
-    checklists = {};
-    (clData || []).forEach(item => {
-      if (!checklists[item.caso_id]) checklists[item.caso_id] = {analista:[], auxiliar:[]};
-      checklists[item.caso_id][item.tipo] = checklists[item.caso_id][item.tipo] || [];
+// SUPABASE
+async function loadAll(){
+  try{
+    const {data:c}=await sb.from('casos').select('*').order('orden',{ascending:true});
+    const {data:cl}=await sb.from('caso_checklist').select('*').order('orden',{ascending:true});
+    cases=c||[];
+    checklists={};
+    (cl||[]).forEach(item=>{
+      if(!checklists[item.caso_id])checklists[item.caso_id]={analista:[],auxiliar:[]};
       checklists[item.caso_id][item.tipo].push(item);
     });
-    render();
-    setSyncDot(true);
-  } catch(e) { console.error(e); setSyncDot(false); }
+    render();setSyncDot(true);
+  }catch(e){console.error(e);setSyncDot(false);}
 }
- 
-async function createCase(data) {
-  const maxOrden = cases.length > 0 ? Math.max(...cases.map(c=>c.orden||0)) + 1 : 0;
-  const caseData = {...data, orden: maxOrden, creado_por: user.nombre};
-  const { data: newCase, error } = await sb.from('casos').insert([caseData]).select().single();
-  if (error) { alert('Error al crear caso: ' + error.message); return null; }
-  
-  // Create analista checklist
-  const items = ITEMS_ANALISTA.filter(l => !(l === 'Flujo de caja' && data.tipo === 'sin_flujo'));
-  const aItems = items.map((l,i) => ({caso_id: newCase.id, tipo:'analista', label:l, done:false, comment:'', fixed:true, orden:i}));
-  
-  // Create auxiliar checklist
-  const auxItems = ITEMS_AUXILIAR.map((l,i) => ({caso_id: newCase.id, tipo:'auxiliar', label:l, done:false, comment:'', fixed:true, orden:i}));
-  
-  await sb.from('caso_checklist').insert([...aItems, ...auxItems]);
+async function createCase(data){
+  const maxOrden=cases.filter(c=>!c.archivado).length;
+  const {data:nc,error}=await sb.from('casos').insert([{...data,orden:maxOrden,creado_por:user.nombre}]).select().single();
+  if(error){alert('Error: '+error.message);return;}
+  const tipo=data.tipo||'pendiente';
+  const aItems=ITEMS_ANALISTA.filter(l=>!(l==='Flujo de caja'&&tipo==='sin_flujo')).map((l,i)=>({caso_id:nc.id,tipo:'analista',label:l,done:false,comment:'',fixed:true,orden:i}));
+  const auxItems=ITEMS_AUXILIAR.map((l,i)=>({caso_id:nc.id,tipo:'auxiliar',label:l,done:false,comment:'',fixed:true,orden:i}));
+  await sb.from('caso_checklist').insert([...aItems,...auxItems]);
   await loadAll();
-  return newCase;
 }
- 
-async function updateCase(id, data) {
-  await sb.from('casos').update(data).eq('id', id);
-}
- 
-async function updateCheckItem(id, data) {
-  await sb.from('caso_checklist').update(data).eq('id', id);
-}
- 
-async function addCheckItem(casoId, tipo, label) {
-  const items = (checklists[casoId] && checklists[casoId][tipo]) || [];
-  const orden = items.length;
-  const { data } = await sb.from('caso_checklist').insert([{caso_id:casoId, tipo, label, done:false, comment:'', fixed:false, orden}]).select().single();
+async function upCase(id,data){await sb.from('casos').update(data).eq('id',id);}
+async function upItem(id,data){await sb.from('caso_checklist').update(data).eq('id',id);}
+async function addItem(casoId,tipo,label){
+  const items=(checklists[casoId]&&checklists[casoId][tipo])||[];
+  const {data}=await sb.from('caso_checklist').insert([{caso_id:casoId,tipo,label,done:false,comment:'',fixed:false,orden:items.length}]).select().single();
   return data;
 }
+async function delItem(id){await sb.from('caso_checklist').delete().eq('id',id);}
+async function delCase(id){await sb.from('casos').delete().eq('id',id);await loadAll();}
  
-async function deleteCheckItem(id) {
-  await sb.from('caso_checklist').delete().eq('id', id);
+// SLA
+function hoy(){return new Date().toISOString().split('T')[0];}
+function diasDesde(f){if(!f)return null;return Math.floor((Date.now()-new Date(f).getTime())/864e5);}
+function docYGccOk(caso){
+  const cl=checklists[caso.id];
+  const docItem=cl&&cl.analista&&cl.analista.find(x=>x.label==='Documentación');
+  return docItem&&docItem.done&&caso.gcc_propio==='completo'&&caso.gcc_riesgo==='completo';
+}
+function slaInfo(caso){
+  if(caso.estado==='en_espera')return{cls:'sla-none badge',txt:'Sin iniciar'};
+  const t=TIPOS[caso.tipo];if(!t||!t.sla)return{cls:'sla-none badge',txt:'SLA por definir'};
+  if(!docYGccOk(caso)||!caso.fecha_doc_completa)return{cls:'sla-paused badge',txt:'SLA pausado'};
+  const d=diasDesde(caso.fecha_doc_completa),sla=t.sla;
+  if(d>sla)return{cls:'sla-over badge',txt:'Vencido +'+(d-sla)+'d'};
+  if(d===sla)return{cls:'sla-warn badge',txt:'Vence hoy'};
+  if(sla>1&&d===sla-1)return{cls:'sla-warn badge',txt:'Día '+d+'/'+sla};
+  return{cls:'sla-ok badge',txt:'Día '+d+'/'+sla};
 }
  
-async function deleteCase(id) {
-  await sb.from('casos').delete().eq('id', id);
-  await loadAll();
+// DOC STATUS — derived from auxiliar checklist
+function getDocEstado(casoId, fechaRevision){
+  const items=(checklists[casoId]&&checklists[casoId]['auxiliar'])||[];
+  if(!items.length||!fechaRevision)return 'sin_iniciar';
+  const total=items.length, done=items.filter(x=>x.done).length;
+  if(done===total)return 'completo';
+  if(done>0||fechaRevision)return 'incompleto';
+  return 'en_revision';
 }
- 
-// ---- SLA ----
-function diasDesde(f) { if(!f) return null; return Math.floor((Date.now()-new Date(f).getTime())/864e5); }
-function docYGccCompleto(caso) {
-  const cl = checklists[caso.id];
-  const docItem = cl && cl.analista && cl.analista.find(x=>x.label==='Documentación');
-  return docItem && docItem.done && caso.gcc_propio==='completo' && caso.gcc_riesgo==='completo';
+function calcDocEstado(casoId, fechaRevision){
+  const items=(checklists[casoId]&&checklists[casoId]['auxiliar'])||[];
+  if(!fechaRevision)return 'sin_iniciar';
+  const total=items.length, done=items.filter(x=>x.done).length;
+  if(done===total&&total>0)return 'completo';
+  return 'incompleto';
 }
-function slaInfo(caso) {
-  if (caso.estado==='en_espera') return {cls:'sla-none badge', txt:'Sin iniciar'};
-  const t = TIPOS[caso.tipo];
-  if (!t||!t.sla) return {cls:'sla-none badge', txt:'SLA por definir'};
-  if (!docYGccCompleto(caso)||!caso.fecha_doc_completa) return {cls:'sla-paused badge', txt:'SLA pausado'};
-  const d = diasDesde(caso.fecha_doc_completa), sla = t.sla;
-  if (d > sla) return {cls:'sla-over badge', txt:'Vencido +'+(d-sla)+'d'};
-  if (d === sla) return {cls:'sla-warn badge', txt:'Vence hoy ('+d+'/'+sla+'d)'};
-  if (sla>1&&d===sla-1) return {cls:'sla-warn badge', txt:'Día '+d+'/'+sla};
-  return {cls:'sla-ok badge', txt:'Día '+d+'/'+sla};
+function getPendingDocs(casoId){
+  const items=(checklists[casoId]&&checklists[casoId]['auxiliar'])||[];
+  return items.filter(x=>!x.done);
 }
- 
-function checkProg(casoId, tipo) {
-  const items = (checklists[casoId]&&checklists[casoId][tipo])||[];
-  if (!items.length) return 0;
+function checkProg(casoId,tipo){
+  const items=(checklists[casoId]&&checklists[casoId][tipo])||[];
+  if(!items.length)return 0;
   return Math.round(items.filter(x=>x.done).length/items.length*100);
 }
  
-// ---- RENDER ----
-function setSyncDot(on) {
-  const d = document.getElementById('sync-dot');
-  if (d) { d.className = 'sync-dot'+(on?'':' off'); d.title = on?'Conectado':'Sin conexión'; }
-}
- 
-function render() {
-  renderStats();
-  if (activeTab==='activos') renderActivos();
-  else if (activeTab==='devueltos') renderDevueltos();
-  else renderWM();
-}
- 
-function renderStats() {
-  const activos = cases.filter(c=>!c.archivado);
-  const venc = activos.filter(c=>slaInfo(c).cls.includes('sla-over')).length;
-  const paused = activos.filter(c=>slaInfo(c).cls.includes('sla-paused')&&c.estado!=='en_espera').length;
-  document.getElementById('stats').innerHTML = `
+// RENDER
+function setSyncDot(on){const d=document.getElementById('sync-dot');if(d){d.className='sync-dot'+(on?'':' off');d.title=on?'Conectado':'Sin conexión';}}
+function render(){renderStats();if(activeTab==='activos')renderActivos();else if(activeTab==='devueltos')renderDevueltos();else renderWM();}
+function renderStats(){
+  const activos=cases.filter(c=>!c.archivado);
+  const venc=activos.filter(c=>slaInfo(c).cls.includes('sla-over')).length;
+  document.getElementById('stats').innerHTML=`
     <div class="stat"><b>${activos.length}</b> activos</div>
     <div class="stat"><b>${activos.filter(c=>c.estado==='en_espera').length}</b> en espera</div>
     <div class="stat"><b>${activos.filter(c=>['en_proceso','por_comite','esperando_decision'].includes(c.estado)).length}</b> en proceso</div>
-    ${paused?`<div class="stat" style="background:#F1EFE8;color:#5F5E5A"><b>${paused}</b> SLA pausado</div>`:''}
     ${venc?`<div class="stat" style="background:#FCEBEB;color:#791F1F"><b>${venc}</b> SLA vencido</div>`:''}
   `;
 }
- 
-function renderActivos() {
-  const el = document.getElementById('view-activos');
-  const activos = cases.filter(c=>!c.archivado);
-  if (!activos.length) { el.innerHTML = '<div class="empty">No hay casos activos.</div>'; return; }
-  el.innerHTML = activos.map((c,i)=>cardHTML(c,i)).join('');
+function renderActivos(){
+  const el=document.getElementById('view-activos');
+  const activos=cases.filter(c=>!c.archivado);
+  if(!activos.length){el.innerHTML='<div class="empty">No hay casos activos.</div>';return;}
+  el.innerHTML=activos.map((c,i)=>cardHTML(c,i)).join('');
 }
  
-function cardHTML(c, i) {
-  const est = ESTADOS[c.estado]||ESTADOS.en_espera;
-  const sla = slaInfo(c);
-  const sec = openSecs[c.id]||'datos';
-  const ap = checkProg(c.id,'analista');
-  const xp = checkProg(c.id,'auxiliar');
+function cardHTML(c,i){
+  const est=ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera;
+  const sla=slaInfo(c);
+  const docEst=calcDocEstado(c.id,c.fecha_revision);
+  const docBadge=DOC_ESTADOS[docEst]||DOC_ESTADOS.sin_iniciar;
+  const sec=openSecs[c.id]||'datos';
+  const ap=checkProg(c.id,'analista');
+  const xp=checkProg(c.id,'auxiliar');
+  const pendDocs=getPendingDocs(c.id);
+ 
+  // Tabs según rol
+  let tabsHTML='<button class="stab'+(sec==='datos'?' active':'')+'" onclick="switchSec(''+c.id+'','datos',this)">Datos</button>';
+  if(user.rol==='auxiliar'||user.rol==='director'){
+    tabsHTML+='<button class="stab'+(sec==='aux'?' active':'')+'" onclick="switchSec(''+c.id+'','aux',this)">Revisión documental'+(xp?' ('+xp+'%)':'')+'</button>';
+    tabsHTML+='<button class="stab'+(sec==='correo'?' active':'')+'" onclick="switchSec(''+c.id+'','correo',this)">Correo</button>';
+  }
+  if(user.rol==='analista'||user.rol==='director'){
+    tabsHTML+='<button class="stab'+(sec==='checklist'?' active':'')+'" onclick="switchSec(''+c.id+'','checklist',this)">Checklist'+(ap?' ('+ap+'%)':'')+'</button>';
+    tabsHTML+='<button class="stab'+(sec==='comite'?' active':'')+'" onclick="switchSec(''+c.id+'','comite',this)">Comité</button>';
+    tabsHTML+='<button class="stab'+(sec==='info'?' active':'')+'" onclick="switchSec(''+c.id+'','info',this)">Información</button>';
+  }
+ 
   return `<div class="client-card ${est.color}" id="card-${c.id}">
   <div class="card-head" onclick="toggleCard('${c.id}')">
-    <span class="orden">${i+1}</span>
-    <span class="client-name">${c.nombre}${c.prioridad?'<span class="priotag">PRIORIDAD</span>':''}</span>
-    <span class="nit">${c.nit||''}</span>
-    <span class="head-badges">
+    <div class="card-left">
+      <div class="card-title-row">
+        <span class="card-name">${c.nombre}${c.prioridad?'<span class="priotag">PRIORIDAD</span>':''}</span>
+        <span class="card-nit">${c.nit||''}</span>
+      </div>
+      <div class="card-roles-row">
+        <span class="role-status"><b>Analista:</b> ${c.analista_nombre||'Sin asignar'} · <span class="badge" style="background:${est.bg};color:${est.c};padding:1px 6px">${est.label}</span></span>
+        <span class="role-status"><b>Auxiliar:</b> ${c.auxiliar_nombre||'Sin asignar'} · <span class="badge" style="background:${docBadge.bg};color:${docBadge.c};padding:1px 6px">${docBadge.label}</span></span>
+      </div>
+    </div>
+    <div class="card-right">
       <span class="${sla.cls}" id="slabadge-${c.id}">${sla.txt}</span>
-      <span class="assign-pill ${c.analista_nombre?'':'empty'}">${c.analista_nombre||'Sin analista'}</span>
-      <span class="assign-pill ${c.auxiliar_nombre?'':'empty'}">${c.auxiliar_nombre||'Sin auxiliar'}</span>
-      <span class="badge" id="estbadge-${c.id}" style="background:${est.bg};color:${est.c}">${est.label}</span>
       <span class="arrow" id="arrow-${c.id}">▼</span>
-    </span>
+    </div>
   </div>
   <div class="card-body${openCards[c.id]?' open':''}" id="body-${c.id}">
-    <div class="stabs">
-      <button class="stab${sec==='datos'?' active':''}" onclick="switchSec('${c.id}','datos',this)">Datos</button>
-      <button class="stab${sec==='aux'?' active':''}" onclick="switchSec('${c.id}','aux',this)">Docs auxiliar${xp?' ('+xp+'%)':''}</button>
-      <button class="stab${sec==='analista'?' active':''}" onclick="switchSec('${c.id}','analista',this)">Checklist${ap?' ('+ap+'%)':''}</button>
-      <button class="stab${sec==='comite'?' active':''}" onclick="switchSec('${c.id}','comite',this)">Comité</button>
-      <button class="stab${sec==='info'?' active':''}" onclick="switchSec('${c.id}','info',this)">Información</button>
-      <button class="stab${sec==='email'?' active':''}" onclick="switchSec('${c.id}','email',this)">Correo</button>
-    </div>
+    <div class="stabs">${tabsHTML}</div>
  
     <div id="sec-datos-${c.id}" style="display:${sec==='datos'?'block':'none'}">
-      ${c.estado!=='en_espera'?`<div class="sla-box"><span class="badge ${sla.cls}">${sla.txt}</span><span style="font-size:12px;color:#666">${docYGccCompleto(c)&&c.fecha_doc_completa?'SLA corre desde que doc + GCC quedaron completos ('+c.fecha_doc_completa+')':'SLA pausado hasta que documentación Y GCC estén completos.'}</span></div>`:''}
       <div class="assign-row">
         <div class="assign-box">
           <div class="alabel">Analista</div>
           <div class="aname ${c.analista_nombre?'':'empty'}">${c.analista_nombre||'Sin asignar'}</div>
         </div>
-        ${!c.analista_nombre?`<button class="btn-asign" onclick="asignarme('${c.id}','analista')">Asignarme</button>`:(c.analista_nombre===user.nombre?`<button class="btn-desasign" onclick="desasignarme('${c.id}','analista')">Desasignarme</button>`:'') }
+        ${!c.analista_nombre&&(user.rol==='analista'||user.rol==='director')?`<button class="btn-asign" onclick="asignarme('${c.id}','analista')">Asignarme</button>`:''}
+        ${c.analista_nombre===user.nombre?`<button class="btn-desasign" onclick="desasignarme('${c.id}','analista')">Desasignarme</button>`:''}
         <div class="assign-box">
-          <div class="alabel">Auxiliar / Practicante</div>
+          <div class="alabel">Analista de revisión documentos</div>
           <div class="aname ${c.auxiliar_nombre?'':'empty'}">${c.auxiliar_nombre||'Sin asignar'}</div>
         </div>
-        ${!c.auxiliar_nombre?`<button class="btn-asign" onclick="asignarme('${c.id}','auxiliar')">Asignarme</button>`:(c.auxiliar_nombre===user.nombre?`<button class="btn-desasign" onclick="desasignarme('${c.id}','auxiliar')">Desasignarme</button>`:'')}
+        ${!c.auxiliar_nombre&&(user.rol==='auxiliar'||user.rol==='director')?`<button class="btn-asign" onclick="asignarme('${c.id}','auxiliar')">Asignarme</button>`:''}
+        ${c.auxiliar_nombre===user.nombre?`<button class="btn-desasign" onclick="desasignarme('${c.id}','auxiliar')">Desasignarme</button>`:''}
       </div>
-      <div class="grid2" style="margin-top:10px">
-        <div><label class="fl">Estado</label>
-          <select onchange="fieldChange('${c.id}','estado',this.value)">${Object.keys(ESTADOS).map(k=>`<option value="${k}"${c.estado===k?' selected':''}>${ESTADOS[k].label}</option>`).join('')}</select>
+      <div class="grid2">
+        <div><label class="fl">Razón social</label><input type="text" value="${c.nombre||''}" onchange="fieldChange('${c.id}','nombre',this.value)"></div>
+        <div><label class="fl">NIT</label><input type="text" value="${c.nit||''}" onchange="fieldChange('${c.id}','nit',this.value)"></div>
+        <div><label class="fl">Gerente de cuenta</label><input type="text" value="${c.gerente_cuenta||''}" onchange="fieldChange('${c.id}','gerente_cuenta',this.value)"></div>
+        <div><label class="fl">Fecha de radicación</label><input type="date" value="${c.fecha_inicio||''}" onchange="fieldChange('${c.id}','fecha_inicio',this.value)"></div>
+        <div><label class="fl">Fecha inicio revisión documental</label>
+          <div style="display:flex;gap:6px;align-items:center">
+            <input type="date" value="${c.fecha_revision||''}" disabled style="opacity:0.6;flex:1">
+            ${!c.fecha_revision&&(user.rol==='auxiliar'||user.rol==='director')?`<button class="btn-iniciar" style="white-space:nowrap" onclick="iniciarRevision('${c.id}')">Iniciar revisión</button>`:''}
+          </div>
+        </div>
+        <div><label class="fl">Fecha documentación completa</label><input type="date" value="${c.fecha_doc_completa||''}" disabled style="opacity:0.6"></div>
+      </div>
+      <div class="doc-status-box">
+        <div class="ds-label">Documentación</div>
+        <span class="badge" style="background:${docBadge.bg};color:${docBadge.c}">${docBadge.label}</span>
+        ${pendDocs.length?`<div class="doc-pending-list">
+          <div style="font-size:11px;color:#888;margin-bottom:4px">Documentos pendientes:</div>
+          ${pendDocs.map(p=>`<div class="doc-pending-item">· ${p.label}${p.comment?' — '+p.comment:''}</div>`).join('')}
+        </div>`:''}
+      </div>
+      ${user.rol==='analista'||user.rol==='director'?`
+      <div class="grid2">
+        <div><label class="fl">Estado del estudio</label>
+          <select onchange="fieldChange('${c.id}','estado',this.value)">${Object.keys(ESTADOS_ANALISTA).map(k=>`<option value="${k}"${c.estado===k?' selected':''}>${ESTADOS_ANALISTA[k].label}</option>`).join('')}</select>
         </div>
         <div><label class="fl">Tipo de cliente</label>
           <select onchange="fieldChange('${c.id}','tipo',this.value)">${Object.keys(TIPOS).map(k=>`<option value="${k}"${c.tipo===k?' selected':''}>${TIPOS[k].label}</option>`).join('')}</select>
         </div>
-        <div><label class="fl">Gerente de cuenta</label>
-          <input type="text" value="${c.gerente_cuenta||''}" onchange="fieldChange('${c.id}','gerente_cuenta',this.value)" placeholder="Nombre del gerente">
-        </div>
-        <div><label class="fl">Fecha inicio</label>
-          <input type="date" value="${c.fecha_inicio||''}" ${c.estado==='en_espera'?'disabled style="opacity:0.4"':''} onchange="fieldChange('${c.id}','fecha_inicio',this.value)">
-        </div>
-        <div><label class="fl">Doc+GCC completo desde <span style="font-size:10px;color:#aaa">(activa SLA)</span></label>
-          <input type="date" id="fdoc-${c.id}" value="${c.fecha_doc_completa||''}" ${!docYGccCompleto(c)||c.estado==='en_espera'?'disabled style="opacity:0.4"':''} onchange="fieldChange('${c.id}','fecha_doc_completa',this.value)">
-        </div>
         <div><label class="fl">GCC mi parte</label>
-          <select onchange="gccChange('${c.id}','gcc_propio',this.value)"><option value="pendiente" ${(c.gcc_propio||'pendiente')==='pendiente'?'selected':''}>Pendiente</option><option value="incompleto" ${c.gcc_propio==='incompleto'?'selected':''}>Incompleto</option><option value="completo" ${c.gcc_propio==='completo'?'selected':''}>Completo</option></select>
+          <select onchange="gccChange('${c.id}','gcc_propio',this.value)">
+            <option value="pendiente" ${(c.gcc_propio||'pendiente')==='pendiente'?'selected':''}>Pendiente</option>
+            <option value="incompleto" ${c.gcc_propio==='incompleto'?'selected':''}>Incompleto</option>
+            <option value="completo" ${c.gcc_propio==='completo'?'selected':''}>Completo</option>
+          </select>
         </div>
         <div><label class="fl">GCC Riesgo/Jurídico</label>
-          <select onchange="gccChange('${c.id}','gcc_riesgo',this.value)"><option value="pendiente" ${(c.gcc_riesgo||'pendiente')==='pendiente'?'selected':''}>Pendiente</option><option value="incompleto" ${c.gcc_riesgo==='incompleto'?'selected':''}>Incompleto</option><option value="completo" ${c.gcc_riesgo==='completo'?'selected':''}>Completo</option></select>
+          <select onchange="gccChange('${c.id}','gcc_riesgo',this.value)">
+            <option value="pendiente" ${(c.gcc_riesgo||'pendiente')==='pendiente'?'selected':''}>Pendiente</option>
+            <option value="incompleto" ${c.gcc_riesgo==='incompleto'?'selected':''}>Incompleto</option>
+            <option value="completo" ${c.gcc_riesgo==='completo'?'selected':''}>Completo</option>
+          </select>
         </div>
+        <div><label class="fl">Doc+GCC completo desde</label><input type="date" id="fdoc-${c.id}" value="${c.fecha_doc_completa||''}" ${!docYGccOk(c)||c.estado==='en_espera'?'disabled style="opacity:0.5"':''} onchange="fieldChange('${c.id}','fecha_doc_completa',this.value)"></div>
         <div><label class="fl">Prioridad</label>
-          <select onchange="fieldChange('${c.id}','prioridad',this.value==='true')"><option value="false" ${!c.prioridad?'selected':''}>No</option><option value="true" ${c.prioridad?'selected':''}>Sí</option></select>
+          <select onchange="fieldChange('${c.id}','prioridad',this.value==='true')">
+            <option value="false" ${!c.prioridad?'selected':''}>No</option>
+            <option value="true" ${c.prioridad?'selected':''}>Sí</option>
+          </select>
         </div>
       </div>
       <div class="action-row">
@@ -400,298 +422,260 @@ function cardHTML(c, i) {
         <button class="btn-del" onclick="confirmDelete('${c.id}')">Eliminar</button>
         <button class="btn-dev" onclick="showDevModal('${c.id}')">Caso devuelto</button>
         <button class="btn-wm" onclick="cargarWM('${c.id}')">Cargar en WM ✓</button>
-      </div>
+      </div>`:''}
+      ${user.rol==='auxiliar'?`<div class="action-row"><span class="spacer"></span><button class="btn-dev" onclick="showDevModal('${c.id}')">Caso devuelto</button></div>`:''}
     </div>
  
     <div id="sec-aux-${c.id}" style="display:${sec==='aux'?'block':'none'}">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">Checklist de revisión documental. Si falta algo, deja un comentario.</div>
+      <div style="font-size:11px;color:#888;margin-bottom:4px">Marca cada documento como completo. Si falta algo deja un comentario.</div>
       <div class="pb-wrap"><div class="pb" id="pb-aux-${c.id}" style="width:${xp}%"></div></div>
       <div id="cl-aux-${c.id}">${renderCL(c.id,'auxiliar')}</div>
       <div class="add-row">
-        <input type="text" id="add-aux-${c.id}" placeholder="Agregar documento adicional..." onkeydown="if(event.key==='Enter')addItem('${c.id}','auxiliar')">
-        <button onclick="addItem('${c.id}','auxiliar')">+</button>
+        <input type="text" id="add-aux-${c.id}" placeholder="Agregar documento adicional..." onkeydown="if(event.key==='Enter')addItemUI('${c.id}','auxiliar')">
+        <button onclick="addItemUI('${c.id}','auxiliar')">+</button>
       </div>
     </div>
  
-    <div id="sec-analista-${c.id}" style="display:${sec==='analista'?'block':'none'}">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">Checklist de progreso del estudio.</div>
-      <div class="pb-wrap"><div class="pb" id="pb-an-${c.id}" style="width:${ap}%"></div></div>
-      <div id="cl-an-${c.id}">${renderCL(c.id,'analista')}</div>
-      <div class="add-row">
-        <input type="text" id="add-an-${c.id}" placeholder="Agregar ítem adicional..." onkeydown="if(event.key==='Enter')addItem('${c.id}','analista')">
-        <button onclick="addItem('${c.id}','analista')">+</button>
-      </div>
-    </div>
- 
-    <div id="sec-comite-${c.id}" style="display:${sec==='comite'?'block':'none'}">
-      <div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Puntos para presentar en comité</div>
-      <textarea class="notabox" placeholder="¿Qué vas a decir en comité? Puntos clave, argumentos, decisión verbal recibida..." onchange="fieldChange('${c.id}','nota_comite',this.value)">${c.nota_comite||''}</textarea>
-    </div>
- 
-    <div id="sec-info-${c.id}" style="display:${sec==='info'?'block':'none'}">
-      <div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Información del caso</div>
-      <textarea class="notabox" placeholder="Preguntas al cliente, análisis, observaciones, contexto..." onchange="fieldChange('${c.id}','nota_info',this.value)">${c.nota_info||''}</textarea>
-    </div>
- 
-    <div id="sec-email-${c.id}" style="display:${sec==='email'?'block':'none'}">
-      <div style="font-size:11px;color:#888;margin-bottom:8px">Texto listo para copiar en Outlook — basado en los ítems pendientes del checklist documental.</div>
+    <div id="sec-correo-${c.id}" style="display:${sec==='correo'?'block':'none'}">
+      <div style="font-size:11px;color:#888;margin-bottom:8px">Texto listo para copiar en Outlook con los documentos pendientes.</div>
       <div class="email-box" id="emailbox-${c.id}">${buildEmail(c)}</div>
       <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
         <button class="btn-copy" onclick="copyEmail('${c.id}')">Copiar texto</button>
         <span class="copy-ok" id="copyok-${c.id}">Copiado</span>
       </div>
     </div>
+ 
+    <div id="sec-checklist-${c.id}" style="display:${sec==='checklist'?'block':'none'}">
+      <div style="font-size:11px;color:#888;margin-bottom:4px">Checklist de progreso del estudio.</div>
+      <div class="pb-wrap"><div class="pb" id="pb-an-${c.id}" style="width:${ap}%"></div></div>
+      <div id="cl-an-${c.id}">${renderCL(c.id,'analista')}</div>
+      <div class="add-row">
+        <input type="text" id="add-an-${c.id}" placeholder="Agregar ítem adicional..." onkeydown="if(event.key==='Enter')addItemUI('${c.id}','analista')">
+        <button onclick="addItemUI('${c.id}','analista')">+</button>
+      </div>
+    </div>
+ 
+    <div id="sec-comite-${c.id}" style="display:${sec==='comite'?'block':'none'}">
+      <div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Puntos para presentar en comité</div>
+      <textarea class="notabox" placeholder="Puntos clave, argumentos, decisión verbal recibida..." onchange="fieldChange('${c.id}','nota_comite',this.value)">${c.nota_comite||''}</textarea>
+    </div>
+ 
+    <div id="sec-info-${c.id}" style="display:${sec==='info'?'block':'none'}">
+      <div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Información del caso</div>
+      <textarea class="notabox" placeholder="Preguntas al cliente, análisis, observaciones..." onchange="fieldChange('${c.id}','nota_info',this.value)">${c.nota_info||''}</textarea>
+    </div>
   </div>
 </div>`;
 }
  
-function renderCL(casoId, tipo) {
-  const items = (checklists[casoId]&&checklists[casoId][tipo])||[];
+function renderCL(casoId,tipo){
+  const items=(checklists[casoId]&&checklists[casoId][tipo])||[];
   return items.map(it=>`<div class="check-item">
     <div class="check-head">
       <input type="checkbox" id="cb-${it.id}" ${it.done?'checked':''} onchange="toggleItem('${casoId}','${it.id}','${tipo}',this.checked)">
       <label class="clabel${it.done?' done':''}" for="cb-${it.id}">${it.label}</label>
-      ${!it.fixed?`<button class="del-check btn-del" onclick="removeItem('${casoId}','${it.id}','${tipo}')">✕</button>`:''}
+      ${!it.fixed?`<button class="del-check btn-del" onclick="removeItemUI('${casoId}','${it.id}','${tipo}')">✕</button>`:''}
     </div>
     ${!it.done?`<div class="check-comment"><input type="text" placeholder="¿Qué falta?" value="${(it.comment||'').replace(/"/g,'&quot;')}" onchange="commentChange('${it.id}','${casoId}','${tipo}',this.value)"></div>`:''}
   </div>`).join('');
 }
  
-function buildEmail(caso) {
-  const items = (checklists[caso.id]&&checklists[caso.id]['auxiliar'])||[];
-  const pend = items.filter(x=>!x.done);
-  if (!pend.length) return 'No hay ítems pendientes en el checklist documental.';
-  const lines = ['Buen día,', '', 'Revisando la documentación de la compañía en asunto, hace falta lo siguiente para dar continuidad al estudio:', ''];
-  pend.forEach((x,i) => {
-    let line = (i+1)+'. ';
-    if (x.comment) line += x.label + ': ' + x.comment;
-    else line += x.label;
+function buildEmail(caso){
+  const items=(checklists[caso.id]&&checklists[caso.id]['auxiliar'])||[];
+  const pend=items.filter(x=>!x.done);
+  if(!pend.length)return 'No hay documentos pendientes.';
+  const lines=['Buen día,','','Revisando la documentación de la compañía en asunto, hace falta lo siguiente para dar continuidad al estudio:',''];
+  pend.forEach((x,i)=>{
+    let line=(i+1)+'. ';
+    if(x.comment)line+=x.label+': '+x.comment;
+    else line+=x.label;
     lines.push(line);
   });
-  lines.push('', 'Quedo atenta, muchas gracias.');
-  return lines.join('\n');
+  lines.push('','Quedo atenta, muchas gracias.');
+  return lines.join('
+');
 }
- 
-function copyEmail(id) {
-  const el = document.getElementById('emailbox-'+id);
-  if (!el) return;
+function copyEmail(id){
+  const el=document.getElementById('emailbox-'+id);if(!el)return;
   navigator.clipboard.writeText(el.innerText).then(()=>{
-    const ok = document.getElementById('copyok-'+id);
-    if (ok) { ok.style.opacity='1'; setTimeout(()=>ok.style.opacity='0',2000); }
+    const ok=document.getElementById('copyok-'+id);
+    if(ok){ok.style.opacity='1';setTimeout(()=>ok.style.opacity='0',2000);}
   });
 }
  
-// ---- EVENTS ----
-async function toggleCard(id) {
-  openCards[id] = !openCards[id];
-  const body = document.getElementById('body-'+id);
-  const arrow = document.getElementById('arrow-'+id);
-  if (body) body.classList.toggle('open', openCards[id]);
-  if (arrow) arrow.style.transform = openCards[id]?'rotate(180deg)':'';
+// EVENTS
+function toggleCard(id){
+  openCards[id]=!openCards[id];
+  const body=document.getElementById('body-'+id);
+  const arrow=document.getElementById('arrow-'+id);
+  if(body)body.classList.toggle('open',openCards[id]);
+  if(arrow)arrow.style.transform=openCards[id]?'rotate(180deg)':'';
 }
- 
-function switchSec(id, sec, el) {
-  openSecs[id] = sec;
-  ['datos','aux','analista','comite','info','email'].forEach(s=>{
-    const d = document.getElementById('sec-'+s+'-'+id);
-    if (d) d.style.display = s===sec?'block':'none';
+function switchSec(id,sec,el){
+  openSecs[id]=sec;
+  ['datos','aux','correo','checklist','comite','info'].forEach(s=>{
+    const d=document.getElementById('sec-'+s+'-'+id);if(d)d.style.display=s===sec?'block':'none';
   });
   el.closest('.stabs').querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
-  if (sec==='email') {
-    const c = cases.find(x=>x.id===id);
-    const box = document.getElementById('emailbox-'+id);
-    if (box && c) box.innerText = buildEmail(c);
-  }
+  if(sec==='correo'){const box=document.getElementById('emailbox-'+id);const c=cases.find(x=>x.id===id);if(box&&c)box.innerText=buildEmail(c);}
 }
- 
-async function fieldChange(id, field, val) {
-  const c = cases.find(x=>x.id===id); if(!c) return;
-  c[field] = val;
-  await updateCase(id, {[field]: val});
-  refreshCard(id);
-  renderStats();
+async function fieldChange(id,field,val){
+  const c=cases.find(x=>x.id===id);if(!c)return;
+  c[field]=val;
+  await upCase(id,{[field]:val});
+  refreshCard(id);renderStats();
 }
- 
-async function gccChange(id, field, val) {
-  const c = cases.find(x=>x.id===id); if(!c) return;
-  c[field] = val;
-  await updateCase(id, {[field]: val});
-  // Check if doc+gcc now complete and set fecha
-  if (docYGccCompleto(c) && !c.fecha_doc_completa && c.estado !== 'en_espera') {
-    const today = new Date().toISOString().split('T')[0];
-    c.fecha_doc_completa = today;
-    await updateCase(id, {fecha_doc_completa: today});
-    const fd = document.getElementById('fdoc-'+id);
-    if (fd) { fd.value = today; fd.disabled = false; fd.style.opacity='1'; }
+async function gccChange(id,field,val){
+  const c=cases.find(x=>x.id===id);if(!c)return;
+  c[field]=val;
+  await upCase(id,{[field]:val});
+  if(docYGccOk(c)&&!c.fecha_doc_completa&&c.estado!=='en_espera'){
+    const t=hoy();c.fecha_doc_completa=t;
+    await upCase(id,{fecha_doc_completa:t});
+    const fd=document.getElementById('fdoc-'+id);if(fd){fd.value=t;fd.disabled=false;fd.style.opacity='1';}
   }
   refreshSLA(id);
 }
- 
-async function toggleItem(casoId, itemId, tipo, done) {
-  const c = cases.find(x=>x.id===casoId);
-  const cl = checklists[casoId] && checklists[casoId][tipo];
-  const item = cl && cl.find(x=>x.id===itemId);
-  if (!item) return;
-  item.done = done;
-  if (done) item.comment = '';
-  await updateCheckItem(itemId, {done, comment:''});
-  
-  // If doc item in analista checklist, check SLA
-  if (tipo==='analista' && item.label==='Documentación') {
-    if (done && docYGccCompleto(c) && !c.fecha_doc_completa && c.estado!=='en_espera') {
-      const today = new Date().toISOString().split('T')[0];
-      c.fecha_doc_completa = today;
-      await updateCase(casoId, {fecha_doc_completa: today});
+async function iniciarRevision(casoId){
+  const c=cases.find(x=>x.id===casoId);if(!c)return;
+  const t=hoy();c.fecha_revision=t;
+  await upCase(casoId,{fecha_revision:t});
+  await loadAll();
+}
+async function toggleItem(casoId,itemId,tipo,done){
+  const c=cases.find(x=>x.id===casoId);
+  const cl=checklists[casoId]&&checklists[casoId][tipo];
+  const item=cl&&cl.find(x=>x.id===itemId);if(!item)return;
+  item.done=done;if(done)item.comment='';
+  await upItem(itemId,{done,comment:''});
+  if(tipo==='analista'&&item.label==='Documentación'){
+    if(done&&docYGccOk(c)&&!c.fecha_doc_completa&&c.estado!=='en_espera'){
+      const t=hoy();c.fecha_doc_completa=t;await upCase(casoId,{fecha_doc_completa:t});
     }
-    if (!done) { c.fecha_doc_completa=''; await updateCase(casoId, {fecha_doc_completa:''}); }
+    if(!done){c.fecha_doc_completa='';await upCase(casoId,{fecha_doc_completa:''});}
     refreshSLA(casoId);
   }
-  
-  const el = document.getElementById('cl-'+tipo.substring(0,2)+'-'+casoId);
-  if (el) { el.innerHTML = renderCL(casoId, tipo); }
-  else {
-    const el2 = document.getElementById('cl-an-'+casoId);
-    if (el2 && tipo==='analista') el2.innerHTML = renderCL(casoId, tipo);
-    const el3 = document.getElementById('cl-aux-'+casoId);
-    if (el3 && tipo==='auxiliar') el3.innerHTML = renderCL(casoId, tipo);
+  // Update doc status when auxiliar marks items
+  if(tipo==='auxiliar'){
+    const newDocEst=calcDocEstado(casoId,c.fecha_revision);
+    if(newDocEst==='completo'&&!c.fecha_doc_aux_completa){
+      const t=hoy();c.fecha_doc_aux_completa=t;
+      await upCase(casoId,{fecha_doc_completa:t});
+    }
+    refreshDocStatus(casoId);
   }
-  
-  const prog = checkProg(casoId, tipo);
-  const pbKey = tipo==='analista'?'pb-an-':'pb-aux-';
-  const bar = document.getElementById(pbKey+casoId);
-  if (bar) bar.style.width = prog+'%';
+  const elAn=document.getElementById('cl-an-'+casoId);if(elAn&&tipo==='analista')elAn.innerHTML=renderCL(casoId,tipo);
+  const elAux=document.getElementById('cl-aux-'+casoId);if(elAux&&tipo==='auxiliar')elAux.innerHTML=renderCL(casoId,tipo);
+  const pbKey=tipo==='analista'?'pb-an-':'pb-aux-';
+  const bar=document.getElementById(pbKey+casoId);if(bar)bar.style.width=checkProg(casoId,tipo)+'%';
+}
+async function commentChange(itemId,casoId,tipo,val){
+  const cl=checklists[casoId]&&checklists[casoId][tipo];
+  const item=cl&&cl.find(x=>x.id===itemId);if(item)item.comment=val;
+  await upItem(itemId,{comment:val});
+  if(tipo==='auxiliar')refreshDocStatus(casoId);
+}
+async function addItemUI(casoId,tipo){
+  const key=tipo==='auxiliar'?'add-aux-'+casoId:'add-an-'+casoId;
+  const inp=document.getElementById(key);if(!inp||!inp.value.trim())return;
+  const label=inp.value.trim();inp.value='';
+  const newItem=await addItem(casoId,tipo,label);
+  if(newItem){if(!checklists[casoId])checklists[casoId]={analista:[],auxiliar:[]};checklists[casoId][tipo].push(newItem);}
+  const elKey=tipo==='analista'?'cl-an-':'cl-aux-';
+  const el=document.getElementById(elKey+casoId);if(el)el.innerHTML=renderCL(casoId,tipo);
+}
+async function removeItemUI(casoId,itemId,tipo){
+  await delItem(itemId);
+  if(checklists[casoId]&&checklists[casoId][tipo])checklists[casoId][tipo]=checklists[casoId][tipo].filter(x=>x.id!==itemId);
+  const elKey=tipo==='analista'?'cl-an-':'cl-aux-';
+  const el=document.getElementById(elKey+casoId);if(el)el.innerHTML=renderCL(casoId,tipo);
+}
+async function asignarme(casoId,rol){
+  const field=rol==='analista'?'analista_nombre':'auxiliar_nombre';
+  const c=cases.find(x=>x.id===casoId);if(!c)return;
+  c[field]=user.nombre;await upCase(casoId,{[field]:user.nombre});refreshCard(casoId);
+}
+async function desasignarme(casoId,rol){
+  const field=rol==='analista'?'analista_nombre':'auxiliar_nombre';
+  const c=cases.find(x=>x.id===casoId);if(!c)return;
+  c[field]='';await upCase(casoId,{[field]:''});refreshCard(casoId);
 }
  
-async function commentChange(itemId, casoId, tipo, val) {
-  const cl = checklists[casoId] && checklists[casoId][tipo];
-  const item = cl && cl.find(x=>x.id===itemId);
-  if (item) item.comment = val;
-  await updateCheckItem(itemId, {comment: val});
-}
- 
-async function addItem(casoId, tipo) {
-  const key = tipo==='auxiliar'?`add-aux-${casoId}`:`add-an-${casoId}`;
-  const inp = document.getElementById(key);
-  if (!inp || !inp.value.trim()) return;
-  const label = inp.value.trim();
-  inp.value = '';
-  const newItem = await addCheckItem(casoId, tipo, label);
-  if (newItem) {
-    if (!checklists[casoId]) checklists[casoId] = {analista:[], auxiliar:[]};
-    checklists[casoId][tipo].push(newItem);
-  }
-  const elKey = tipo==='analista'?'cl-an-':'cl-aux-';
-  const el = document.getElementById(elKey+casoId);
-  if (el) el.innerHTML = renderCL(casoId, tipo);
-}
- 
-async function removeItem(casoId, itemId, tipo) {
-  await deleteCheckItem(itemId);
-  if (checklists[casoId] && checklists[casoId][tipo])
-    checklists[casoId][tipo] = checklists[casoId][tipo].filter(x=>x.id!==itemId);
-  const elKey = tipo==='analista'?'cl-an-':'cl-aux-';
-  const el = document.getElementById(elKey+casoId);
-  if (el) el.innerHTML = renderCL(casoId, tipo);
-}
- 
-async function asignarme(casoId, rol) {
-  const field = rol==='analista'?'analista_nombre':'auxiliar_nombre';
-  const c = cases.find(x=>x.id===casoId); if(!c) return;
-  c[field] = user.nombre;
-  await updateCase(casoId, {[field]: user.nombre});
-  refreshCard(casoId);
-}
-async function desasignarme(casoId, rol) {
-  const field = rol==='analista'?'analista_nombre':'auxiliar_nombre';
-  const c = cases.find(x=>x.id===casoId); if(!c) return;
-  c[field] = '';
-  await updateCase(casoId, {[field]: ''});
-  refreshCard(casoId);
-}
- 
-function refreshCard(id) {
-  const c = cases.find(x=>x.id===id); if(!c) return;
-  const card = document.getElementById('card-'+id);
-  if (!card) return;
-  const est = ESTADOS[c.estado]||ESTADOS.en_espera;
-  card.className = 'client-card '+est.color;
-  const estBadge = document.getElementById('estbadge-'+id);
-  if (estBadge) { estBadge.textContent=est.label; estBadge.style.background=est.bg; estBadge.style.color=est.c; }
+function refreshCard(id){
+  const c=cases.find(x=>x.id===id);if(!c)return;
+  const card=document.getElementById('card-'+id);if(!card)return;
+  const est=ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera;
+  card.className='client-card '+est.color;
   refreshSLA(id);
 }
- 
-function refreshSLA(id) {
-  const c = cases.find(x=>x.id===id); if(!c) return;
-  const sla = slaInfo(c);
-  const b = document.getElementById('slabadge-'+id);
-  if (b) { b.textContent=sla.txt; b.className=sla.cls; }
+function refreshSLA(id){
+  const c=cases.find(x=>x.id===id);if(!c)return;
+  const sla=slaInfo(c);
+  const b=document.getElementById('slabadge-'+id);
+  if(b){b.textContent=sla.txt;b.className=sla.cls;}
+}
+function refreshDocStatus(casoId){
+  const c=cases.find(x=>x.id===casoId);if(!c)return;
+  const docEst=calcDocEstado(casoId,c.fecha_revision);
+  const docBadge=DOC_ESTADOS[docEst]||DOC_ESTADOS.sin_iniciar;
+  const card=document.getElementById('card-'+casoId);if(!card)return;
+  const rolesRow=card.querySelector('.card-roles-row');if(!rolesRow)return;
+  rolesRow.innerHTML=`
+    <span class="role-status"><b>Analista:</b> ${c.analista_nombre||'Sin asignar'} · <span class="badge" style="background:${(ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera).bg};color:${(ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera).c};padding:1px 6px">${(ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera).label}</span></span>
+    <span class="role-status"><b>Auxiliar:</b> ${c.auxiliar_nombre||'Sin asignar'} · <span class="badge" style="background:${docBadge.bg};color:${docBadge.c};padding:1px 6px">${docBadge.label}</span></span>
+  `;
 }
  
-async function moveUp(id) {
-  const i = cases.findIndex(x=>x.id===id&&!x.archivado);
-  const activos = cases.filter(c=>!c.archivado);
-  const ai = activos.findIndex(x=>x.id===id);
-  if (ai<=0) return;
-  const prev = activos[ai-1];
-  [c.orden, prev.orden] = [prev.orden, activos[ai].orden];
-  await updateCase(id, {orden: activos[ai].orden});
-  await updateCase(prev.id, {orden: prev.orden});
+async function moveUp(id){
+  const activos=cases.filter(c=>!c.archivado);
+  const ai=activos.findIndex(x=>x.id===id);if(ai<=0)return;
+  const cur=activos[ai],prev=activos[ai-1];
+  const tmp=cur.orden;
+  await upCase(id,{orden:prev.orden});await upCase(prev.id,{orden:tmp});
   await loadAll();
 }
- 
-async function moveDown(id) {
-  const activos = cases.filter(c=>!c.archivado);
-  const ai = activos.findIndex(x=>x.id===id);
-  if (ai<0||ai>=activos.length-1) return;
-  const next = activos[ai+1];
-  const cur = activos[ai];
-  const tmp = cur.orden;
-  await updateCase(id, {orden: next.orden});
-  await updateCase(next.id, {orden: tmp});
+async function moveDown(id){
+  const activos=cases.filter(c=>!c.archivado);
+  const ai=activos.findIndex(x=>x.id===id);if(ai<0||ai>=activos.length-1)return;
+  const cur=activos[ai],next=activos[ai+1];
+  const tmp=cur.orden;
+  await upCase(id,{orden:next.orden});await upCase(next.id,{orden:tmp});
   await loadAll();
 }
- 
-async function cargarWM(id) {
-  const c = cases.find(x=>x.id===id); if(!c) return;
-  const now = new Date();
-  await updateCase(id, {archivado:true, tipo_cierre:'wm', fecha_cierre:now.toLocaleDateString('es-CO'), anio_wm:now.getFullYear(), mes_wm:now.getMonth()+1});
+async function cargarWM(id){
+  const now=new Date();
+  await upCase(id,{archivado:true,tipo_cierre:'wm',fecha_cierre:now.toLocaleDateString('es-CO'),anio_wm:now.getFullYear(),mes_wm:now.getMonth()+1});
   await loadAll();
 }
- 
-function showDevModal(id) {
-  const c = cases.find(x=>x.id===id); if(!c) return;
-  document.getElementById('modals').innerHTML = `<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
+function showDevModal(id){
+  const c=cases.find(x=>x.id===id);if(!c)return;
+  document.getElementById('modals').innerHTML=`<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
     <h3>Registrar devolución</h3>
     <p style="font-size:13px;color:#888;margin-bottom:1rem">${c.nombre}${c.nit?' — '+c.nit:''}</p>
     <div class="mfield"><label>Motivo</label><input type="text" id="dev-motivo" placeholder="Ej: Falta documentación, GCC pendiente..."></div>
     <div class="mfield"><label>¿Qué faltó?</label><textarea id="dev-notas" style="width:100%;min-height:80px;border:0.5px solid #ccc;border-radius:8px;padding:8px;font-size:12px;background:#fff;resize:vertical"></textarea></div>
-    <div class="mbtns">
-      <button onclick="closeModal()">Cancelar</button>
-      <button style="background:#FCEBEB;color:#791F1F;border-color:#E24B4A" onclick="confirmDev('${id}')">Confirmar</button>
-    </div>
+    <div class="mbtns"><button onclick="closeModal()">Cancelar</button>
+    <button style="background:#FCEBEB;color:#791F1F;border-color:#E24B4A" onclick="confirmDev('${id}')">Confirmar</button></div>
   </div></div>`;
 }
- 
-async function confirmDev(id) {
-  const motivo = document.getElementById('dev-motivo').value.trim();
-  const notas = document.getElementById('dev-notas').value.trim();
-  const now = new Date();
-  await updateCase(id, {archivado:true, tipo_cierre:'devuelto', fecha_cierre:now.toLocaleDateString('es-CO'), motivo_devolucion:motivo, notas_devolucion:notas, anio_wm:now.getFullYear(), mes_wm:now.getMonth()+1});
-  closeModal(); await loadAll();
+async function confirmDev(id){
+  const motivo=document.getElementById('dev-motivo').value.trim();
+  const notas=document.getElementById('dev-notas').value.trim();
+  const now=new Date();
+  await upCase(id,{archivado:true,tipo_cierre:'devuelto',fecha_cierre:now.toLocaleDateString('es-CO'),motivo_devolucion:motivo,notas_devolucion:notas,anio_wm:now.getFullYear(),mes_wm:now.getMonth()+1});
+  closeModal();await loadAll();
+}
+async function confirmDelete(id){if(!confirm('¿Eliminar este caso?'))return;await delCase(id);}
+async function reactivar(id){
+  await upCase(id,{archivado:false,tipo_cierre:null,fecha_cierre:null,estado:'en_espera'});await loadAll();
 }
  
-async function confirmDelete(id) {
-  if (!confirm('¿Eliminar este caso?')) return;
-  await deleteCase(id);
-}
- 
-// ---- ARCHIVED VIEWS ----
-function renderDevueltos() {
-  const el = document.getElementById('view-devueltos');
-  const devueltos = cases.filter(c=>c.archivado&&c.tipo_cierre==='devuelto');
-  if (!devueltos.length) { el.innerHTML='<div class="empty">No hay casos devueltos.</div>'; return; }
-  el.innerHTML = devueltos.map(c=>`<div class="arch-item">
+function renderDevueltos(){
+  const el=document.getElementById('view-devueltos');
+  const devueltos=cases.filter(c=>c.archivado&&c.tipo_cierre==='devuelto');
+  if(!devueltos.length){el.innerHTML='<div class="empty">No hay casos devueltos.</div>';return;}
+  el.innerHTML=devueltos.map(c=>`<div class="arch-item">
     <div class="arch-head" onclick="this.nextElementSibling.classList.toggle('open')">
       <span style="font-weight:500;flex:1">${c.nombre}</span>
       <span style="color:#888">${c.nit||''}</span>
@@ -701,8 +685,6 @@ function renderDevueltos() {
     </div>
     <div class="arch-body">
       ${c.notas_devolucion?`<div style="margin-bottom:8px"><div style="font-size:11px;color:#888;margin-bottom:3px">Qué faltó:</div><div class="arch-notes">${c.notas_devolucion}</div></div>`:''}
-      ${c.nota_comite?`<div style="margin-bottom:8px"><div style="font-size:11px;color:#888;margin-bottom:3px">Comité:</div><div class="arch-notes">${c.nota_comite}</div></div>`:''}
-      ${c.nota_info?`<div style="margin-bottom:8px"><div style="font-size:11px;color:#888;margin-bottom:3px">Información:</div><div class="arch-notes">${c.nota_info}</div></div>`:''}
       <div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px">
         <button onclick="reactivar('${c.id}')">Reactivar</button>
         <button class="btn-del" onclick="confirmDelete('${c.id}')">Eliminar</button>
@@ -710,15 +692,14 @@ function renderDevueltos() {
     </div>
   </div>`).join('');
 }
- 
-function renderWM() {
-  const el = document.getElementById('view-wm');
-  const wm = cases.filter(c=>c.archivado&&c.tipo_cierre==='wm');
-  if (!wm.length) { el.innerHTML='<div class="empty">Aún no hay casos cargados en WM.</div>'; return; }
-  const groups = {};
-  wm.forEach(c=>{ const k=`${c.anio_wm}-${String(c.mes_wm).padStart(2,'0')}`; if(!groups[k])groups[k]=[]; groups[k].push(c); });
-  el.innerHTML = Object.keys(groups).sort().reverse().map(k=>{
-    const [y,m] = k.split('-');
+function renderWM(){
+  const el=document.getElementById('view-wm');
+  const wm=cases.filter(c=>c.archivado&&c.tipo_cierre==='wm');
+  if(!wm.length){el.innerHTML='<div class="empty">Aún no hay casos cargados en WM.</div>';return;}
+  const groups={};
+  wm.forEach(c=>{const k=`${c.anio_wm}-${String(c.mes_wm).padStart(2,'0')}`;if(!groups[k])groups[k]=[];groups[k].push(c);});
+  el.innerHTML=Object.keys(groups).sort().reverse().map(k=>{
+    const[y,m]=k.split('-');
     return `<div style="margin-bottom:1rem"><div class="arch-group-title">${MESES[parseInt(m)-1]} ${y} (${groups[k].length})</div>
     ${groups[k].map(c=>`<div class="arch-item"><div class="arch-head" onclick="this.nextElementSibling.classList.toggle('open')">
       <span style="font-weight:500;flex:1">${c.nombre}</span>
@@ -728,92 +709,64 @@ function renderWM() {
     </div>
     <div class="arch-body">
       ${c.nota_comite?`<div style="margin-bottom:6px"><div style="font-size:11px;color:#888;margin-bottom:2px">Comité:</div><div class="arch-notes">${c.nota_comite}</div></div>`:''}
-      ${c.nota_info?`<div style="margin-bottom:6px"><div style="font-size:11px;color:#888;margin-bottom:2px">Información:</div><div class="arch-notes">${c.nota_info}</div></div>`:''}
       <div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px">
         <button onclick="reactivar('${c.id}')">Restaurar</button>
         <button class="btn-del" onclick="confirmDelete('${c.id}')">Eliminar</button>
       </div>
-    </div></div>`).join('')}
-    </div>`;
+    </div></div>`).join('')}</div>`;
   }).join('');
 }
  
-async function reactivar(id) {
-  await updateCase(id, {archivado:false, tipo_cierre:null, fecha_cierre:null, estado:'en_espera'});
-  await loadAll();
-}
- 
-// ---- TABS & MODAL ----
-function switchTab(tab, el) {
-  activeTab = tab;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  ['activos','devueltos','wm'].forEach(t=>{ document.getElementById('view-'+t).style.display=t===tab?'block':'none'; });
+function switchTab(tab,el){
+  activeTab=tab;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
+  ['activos','devueltos','wm'].forEach(t=>{document.getElementById('view-'+t).style.display=t===tab?'block':'none';});
   render();
 }
-function closeModal() { document.getElementById('modals').innerHTML=''; }
+function closeModal(){document.getElementById('modals').innerHTML='';}
  
-function showNewCaseModal() {
-  document.getElementById('modals').innerHTML = `<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
+function showNewCaseModal(){
+  const today=hoy();
+  document.getElementById('modals').innerHTML=`<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
     <h3>Nuevo caso</h3>
     <div class="mfield"><label>Razón social</label><input type="text" id="nc-nombre" placeholder="Ej: MEJOR CDT SAS"></div>
     <div class="mfield"><label>NIT</label><input type="text" id="nc-nit" placeholder="Ej: 901495024"></div>
     <div class="mfield"><label>Gerente de cuenta</label><input type="text" id="nc-gerente" placeholder="Nombre del gerente comercial"></div>
-    <div class="grid2" style="gap:10px">
-      <div class="mfield"><label>Tipo de cliente</label>
-        <select id="nc-tipo">${Object.keys(TIPOS).map(k=>`<option value="${k}">${TIPOS[k].label}</option>`).join('')}</select>
-      </div>
-      <div class="mfield"><label>Documentación inicial</label>
-        <select id="nc-doc"><option value="incompleto">Incompleta</option><option value="completo">Completa</option></select>
-      </div>
-    </div>
-    <div class="mfield"><label>Prioridad</label>
-      <select id="nc-prio"><option value="false">No</option><option value="true">Sí</option></select>
-    </div>
-    <p style="font-size:11px;color:#aaa;margin-top:4px">El SLA corre cuando documentación Y GCC estén completos.</p>
-    <div class="mbtns">
-      <button onclick="closeModal()">Cancelar</button>
-      <button class="primary" onclick="submitNewCase()">Crear caso</button>
-    </div>
+    <div class="mfield"><label>Fecha de radicación</label><input type="date" id="nc-fecha" value="${today}"></div>
+    <div class="mbtns"><button onclick="closeModal()">Cancelar</button><button class="primary" onclick="submitNewCase()">Crear caso</button></div>
   </div></div>`;
 }
- 
-async function submitNewCase() {
-  const nombre = document.getElementById('nc-nombre').value.trim();
-  if (!nombre) return alert('La razón social es obligatoria');
-  const tipo = document.getElementById('nc-tipo').value;
-  const data = {
-    nombre, nit: document.getElementById('nc-nit').value.trim(),
-    gerente_cuenta: document.getElementById('nc-gerente').value.trim(),
-    tipo, estado:'en_espera',
-    gcc_propio:'pendiente', gcc_riesgo:'pendiente',
-    prioridad: document.getElementById('nc-prio').value==='true',
-    fecha_inicio:'', fecha_doc_completa:'',
-    nota_comite:'', nota_info:'',
-    analista_nombre:'', auxiliar_nombre:''
+async function submitNewCase(){
+  const nombre=document.getElementById('nc-nombre').value.trim();
+  if(!nombre)return alert('La razón social es obligatoria');
+  const data={
+    nombre,nit:document.getElementById('nc-nit').value.trim(),
+    gerente_cuenta:document.getElementById('nc-gerente').value.trim(),
+    fecha_inicio:document.getElementById('nc-fecha').value,
+    tipo:'pendiente',estado:'en_espera',
+    gcc_propio:'pendiente',gcc_riesgo:'pendiente',
+    prioridad:false,fecha_doc_completa:'',fecha_revision:'',
+    nota_comite:'',nota_info:'',
+    analista_nombre: user.rol==='analista'?user.nombre:'',
+    auxiliar_nombre: user.rol==='auxiliar'?user.nombre:''
   };
-  closeModal();
-  await createCase(data);
+  closeModal();await createCase(data);
 }
  
-// ---- REALTIME ----
-function subscribeRealtime() {
-  sb.channel('tracker-changes')
-    .on('postgres_changes', {event:'*', schema:'public', table:'casos'}, ()=>loadAll())
-    .on('postgres_changes', {event:'*', schema:'public', table:'caso_checklist'}, ()=>loadAll())
-    .subscribe(status => setSyncDot(status==='SUBSCRIBED'));
+// REALTIME
+function subscribeRealtime(){
+  sb.channel('tracker').on('postgres_changes',{event:'*',schema:'public',table:'casos'},()=>loadAll())
+    .on('postgres_changes',{event:'*',schema:'public',table:'caso_checklist'},()=>loadAll())
+    .subscribe(s=>setSyncDot(s==='SUBSCRIBED'));
 }
  
-// ---- INIT ----
-async function init() {
-  const hasUser = loadUser();
-  if (!hasUser) {
-    showUserModal(true);
-  }
+// INIT
+async function init(){
+  const hasUser=loadUser();
+  if(!hasUser)showUserModal(true);
   await loadAll();
   subscribeRealtime();
 }
- 
 init();
 </script>
 </body>
