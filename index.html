@@ -461,21 +461,15 @@ function buildEmail(caso) {
   const items = (checklists[caso.id]&&checklists[caso.id]['auxiliar'])||[];
   const pend = items.filter(x=>!x.done);
   if (!pend.length) return 'No hay ítems pendientes en el checklist documental.';
-  let txt = 'Buen día,
- 
-Revisando la documentación de la compañía en asunto, hace falta lo siguiente para dar continuidad al estudio:
- 
-';
+  const lines = ['Buen día,', '', 'Revisando la documentación de la compañía en asunto, hace falta lo siguiente para dar continuidad al estudio:', ''];
   pend.forEach((x,i) => {
     let line = (i+1)+'. ';
     if (x.comment) line += x.label + ': ' + x.comment;
     else line += x.label;
-    txt += line + '
-';
+    lines.push(line);
   });
-  txt += '
-Quedo atenta, muchas gracias.';
-  return txt;
+  lines.push('', 'Quedo atenta, muchas gracias.');
+  return lines.join('\n');
 }
  
 function copyEmail(id) {
