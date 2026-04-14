@@ -36,10 +36,10 @@ button.primary:hover{background:#0C447C}
 .card-title-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .card-name{font-weight:500;font-size:13px}
 .card-nit{font-size:11px;color:#888}
-.card-roles-row{display:flex;gap:10px;flex-wrap:wrap}
-.role-status{font-size:11px;color:#666}
+.card-roles-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:2px}
+.role-status{font-size:11px;color:#555}
 .role-status b{color:#1a1a1a}
-.card-right{display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex-shrink:0}
+.card-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .badge{font-size:11px;padding:2px 8px;border-radius:10px;white-space:nowrap}
 .sla-ok{background:#EAF3DE;color:#3B6D11}
 .sla-warn{background:#FAEEDA;color:#854F0B}
@@ -55,27 +55,27 @@ button.primary:hover{background:#0C447C}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .fl{font-size:11px;color:#888;display:block;margin-bottom:3px}
 select,input[type=text],input[type=date]{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:6px 8px;font-size:12px;background:#fff;color:#1a1a1a}
-input:disabled{opacity:0.5;background:#f5f4f0}
+input:disabled,select:disabled{opacity:0.5;background:#f5f4f0}
 textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10px;font-size:13px;background:#fff;color:#1a1a1a;resize:vertical;min-height:160px;line-height:1.7;font-family:inherit}
-.assign-row{display:flex;gap:8px;align-items:center;padding:8px 0;flex-wrap:wrap;margin-bottom:10px}
-.assign-box{flex:1;border:0.5px solid #e0ddd5;border-radius:8px;padding:8px 12px;font-size:12px;background:#fafaf8;min-width:140px}
-.assign-box .alabel{font-size:10px;color:#888;margin-bottom:2px}
-.assign-box .aname{font-weight:500;color:#1a1a1a}
-.assign-box .aname.empty{color:#aaa;font-style:italic;font-weight:400}
-.btn-asign{font-size:11px;padding:3px 10px;background:#E6F1FB;border-color:#185FA5;color:#185FA5}
-.btn-desasign{font-size:11px;padding:3px 10px;background:#fff5f5;border-color:#E24B4A;color:#A32D2D}
+.assign-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.assign-box{flex:1;border:0.5px solid #e0ddd5;border-radius:8px;padding:8px 12px;font-size:12px;background:#fafaf8;min-width:130px}
+.assign-box .al{font-size:10px;color:#888;margin-bottom:2px}
+.assign-box .an{font-weight:500}
+.assign-box .an.empty{color:#aaa;font-style:italic;font-weight:400}
+.btn-asign{font-size:11px;padding:3px 10px;background:#E6F1FB;border-color:#185FA5;color:#185FA5;white-space:nowrap}
+.btn-desasign{font-size:11px;padding:3px 10px;background:#fff5f5;border-color:#E24B4A;color:#A32D2D;white-space:nowrap}
 .sla-box{background:#f5f4f0;border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.doc-status-box{background:#f5f4f0;border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px}
-.doc-status-box .ds-label{font-size:10px;color:#888;margin-bottom:4px}
-.doc-pending-list{margin-top:8px;border-top:0.5px solid #e0ddd5;padding-top:8px}
-.doc-pending-item{font-size:12px;color:#854F0B;padding:2px 0}
+.doc-box{background:#f5f4f0;border-radius:8px;padding:10px 12px;margin-bottom:10px}
+.doc-box .ds-label{font-size:11px;color:#888;margin-bottom:4px}
+.doc-pending{margin-top:8px;border-top:0.5px solid #ddd;padding-top:6px}
+.doc-pending-item{font-size:12px;color:#854F0B;padding:1px 0}
 .check-item{border:0.5px solid #e0ddd5;border-radius:8px;margin-bottom:5px;overflow:hidden}
 .check-head{display:flex;align-items:center;gap:8px;padding:7px 10px}
 .check-head input[type=checkbox]{width:15px;height:15px;cursor:pointer;accent-color:#185FA5;flex-shrink:0}
 .clabel{font-size:13px;flex:1;cursor:pointer}
 .clabel.done{text-decoration:line-through;color:#aaa}
 .check-comment{padding:0 10px 7px 33px}
-.check-comment input{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:5px 8px;font-size:12px;background:#f5f4f0;color:#1a1a1a;font-family:inherit}
+.check-comment input{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:5px 8px;font-size:12px;background:#f5f4f0;font-family:inherit}
 .del-check{padding:2px 6px;font-size:10px;border-color:#E24B4A;color:#A32D2D;opacity:0}
 .check-item:hover .del-check{opacity:1}
 .add-row{display:flex;gap:6px;margin-top:8px}
@@ -89,7 +89,7 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
 .btn-dev{background:#FAEEDA;color:#854F0B;border-color:#EF9F27}
 .btn-wm{background:#0F6E56;color:#9FE1CB;border-color:#0F6E56}
 .btn-copy{background:#EEEDFE;color:#3C3489;border-color:#7F77DD}
-.btn-iniciar{background:#EAF3DE;color:#3B6D11;border-color:#639922}
+.btn-iniciar{background:#EAF3DE;color:#3B6D11;border-color:#639922;white-space:nowrap}
 .email-box{background:#f5f4f0;border:0.5px solid #e0ddd5;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;white-space:pre-wrap;line-height:1.6}
 .copy-ok{font-size:11px;color:#3B6D11;margin-left:8px;opacity:0;transition:opacity 0.3s}
 .arch-group-title{font-size:12px;color:#888;font-weight:500;margin-bottom:6px;padding-bottom:4px;border-bottom:0.5px solid #e0ddd5}
@@ -108,10 +108,10 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
 .mbtns{display:flex;gap:8px;justify-content:flex-end;margin-top:1rem}
 .sync-dot{width:8px;height:8px;border-radius:50%;background:#1D9E75;display:inline-block;margin-right:6px}
 .sync-dot.off{background:#E24B4A}
-.role-tag{font-size:10px;padding:1px 6px;border-radius:4px;margin-left:4px}
-.role-analista{background:#FAEEDA;color:#854F0B}
-.role-auxiliar{background:#E6F1FB;color:#185FA5}
-.role-director{background:#EEEDFE;color:#3C3489}
+.rtag{font-size:10px;padding:1px 6px;border-radius:4px;margin-left:4px}
+.r-analista{background:#FAEEDA;color:#854F0B}
+.r-auxiliar{background:#E6F1FB;color:#185FA5}
+.r-director{background:#EEEDFE;color:#3C3489}
 </style>
 </head>
 <body>
@@ -120,15 +120,15 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
     <span class="title">Tracker Crédito</span>
     <div style="display:flex;align-items:center;gap:8px">
       <span class="sync-dot" id="sync-dot"></span>
-      <span class="user-pill" onclick="showUserModal(false)" id="user-pill">Cargando...</span>
+      <span class="user-pill" id="user-pill" onclick="showUserModal(false)">Cargando...</span>
     </div>
     <button class="primary" onclick="showNewCaseModal()">+ Nuevo caso</button>
   </div>
   <div class="stats" id="stats"></div>
   <div class="tabs">
-    <button class="tab active" onclick="switchTab('activos',this)">Activos</button>
-    <button class="tab" onclick="switchTab('devueltos',this)">Devueltos</button>
-    <button class="tab" onclick="switchTab('wm',this)">Cargados en WM</button>
+    <button class="tab active" data-tab="activos" onclick="switchTab(this)">Activos</button>
+    <button class="tab" data-tab="devueltos" onclick="switchTab(this)">Devueltos</button>
+    <button class="tab" data-tab="wm" onclick="switchTab(this)">Cargados en WM</button>
   </div>
   <div id="view-activos"><div class="empty">Cargando...</div></div>
   <div id="view-devueltos" style="display:none"></div>
@@ -137,11 +137,12 @@ textarea.notabox{width:100%;border:0.5px solid #ccc;border-radius:8px;padding:10
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-const SURL = 'https://mkiljgppfvwannvyrqvb.supabase.co';
-const SKEY = 'sb_publishable_GoPISZcO8JTOmqcveqyJVA_OqttydND';
-const sb = supabase.createClient(SURL, SKEY);
  
-const ESTADOS_ANALISTA = {
+const SURL='https://mkiljgppfvwannvyrqvb.supabase.co';
+const SKEY='sb_publishable_GoPISZcO8JTOmqcveqyJVA_OqttydND';
+const sb=supabase.createClient(SURL,SKEY);
+ 
+const EA={
   en_espera:{label:'En espera',color:'espera',bg:'#F1EFE8',c:'#5F5E5A'},
   en_proceso:{label:'En proceso de estudio',color:'proceso',bg:'#FAEEDA',c:'#854F0B'},
   por_comite:{label:'Por presentar a comité',color:'comite',bg:'#EEEDFE',c:'#3C3489'},
@@ -149,57 +150,49 @@ const ESTADOS_ANALISTA = {
   cargado_wm:{label:'Cargado en WM',color:'cargado',bg:'#E1F5EE',c:'#085041'},
   devuelto:{label:'Devuelto',color:'devuelto',bg:'#FCEBEB',c:'#791F1F'}
 };
-const DOC_ESTADOS = {
-  sin_iniciar:{label:'Sin iniciar',bg:'#f0efe9',c:'#aaa'},
+const DE={
+  sin_iniciar:{label:'Sin iniciar',bg:'#f0efe9',c:'#888'},
   en_revision:{label:'En revisión',bg:'#E6F1FB',c:'#185FA5'},
   incompleto:{label:'Incompleto',bg:'#FAEEDA',c:'#854F0B'},
   completo:{label:'Completo',bg:'#EAF3DE',c:'#3B6D11'}
 };
-const TIPOS = {
+const TIPOS={
   sin_flujo:{label:'Comité emp. sin flujo de caja',sla:1},
   con_flujo:{label:'Comité con flujo de caja',sla:2},
   junta:{label:'Junta directiva',sla:5},
   pendiente:{label:'Por definir',sla:null}
 };
-const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-const ITEMS_ANALISTA = ['Documentación','GCC (mi parte)','GCC (Riesgo/Jurídico)','Matriz','Flujo de caja','Informe'];
-const ITEMS_AUXILIAR = [
-  'INFORME DE VISITA','1.1. Apartado informe de visita grupo económico',
-  'SOLICITUD DE VINCULACIÓN','CERTIFICADO DE EXISTENCIA Y REPRESENTACIÓN LEGAL',
-  '3.1. Ficha jurídica','COMPOSICIÓN ACCIONARIA','RUT','DOCUMENTO DE IDENTIDAD',
-  'FLUJO DE CAJA 5 AÑOS','EEFF CON NOTAS (año vigente y anterior)',
-  'DECLARACIÓN DE RENTA (año vigente y anterior)','BDME','TRANSUNION',
-  'VISOR JUDICIAL','JCC CONTADOR','JCC REVISOR FISCAL',
-  'PANTALLAZO RADICACIÓN WM – GRUPOS CONECTADOS','CONCEPTO SARLAFT POR COMPOSICIÓN ACCIONARIA'
-];
+const MESES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const IA=['Documentación','GCC (mi parte)','GCC (Riesgo/Jurídico)','Matriz','Flujo de caja','Informe'];
+const IU=['INFORME DE VISITA','1.1. Apartado informe de visita grupo económico','SOLICITUD DE VINCULACIÓN','CERTIFICADO DE EXISTENCIA Y REPRESENTACIÓN LEGAL','3.1. Ficha jurídica','COMPOSICIÓN ACCIONARIA','RUT','DOCUMENTO DE IDENTIDAD','FLUJO DE CAJA 5 AÑOS','EEFF CON NOTAS (año vigente y anterior)','DECLARACIÓN DE RENTA (año vigente y anterior)','BDME','TRANSUNION','VISOR JUDICIAL','JCC CONTADOR','JCC REVISOR FISCAL','PANTALLAZO RADICACIÓN WM – GRUPOS CONECTADOS','CONCEPTO SARLAFT POR COMPOSICIÓN ACCIONARIA'];
  
-let user = {nombre:'',rol:''};
-let cases = [], checklists = {}, activeTab = 'activos', openCards = {}, openSecs = {};
+let user={nombre:'',rol:''};
+let cases=[],checklists={},activeTab='activos',openCards={},openSecs={};
  
 // USER
-function loadUser(){const s=localStorage.getItem('tc_user2');if(s){user=JSON.parse(s);updatePill();return true;}return false;}
-function saveUser(n,r){user={nombre:n,rol:r};localStorage.setItem('tc_user2',JSON.stringify(user));updatePill();}
+function loadUser(){const s=localStorage.getItem('tc_u3');if(s){user=JSON.parse(s);updatePill();return true;}return false;}
+function saveUser(n,r){user={nombre:n,rol:r};localStorage.setItem('tc_u3',JSON.stringify(user));updatePill();}
 function updatePill(){
   const p=document.getElementById('user-pill');
-  const tags={analista:'role-analista',auxiliar:'role-auxiliar',director:'role-director'};
-  if(p)p.innerHTML=user.nombre+' <span class="role-tag '+(tags[user.rol]||'')+'">'+user.rol+'</span>';
+  const rc={analista:'r-analista',auxiliar:'r-auxiliar',director:'r-director'};
+  if(p)p.innerHTML=user.nombre+' <span class="rtag '+(rc[user.rol]||'')+'">'+user.rol+'</span>';
 }
 function showUserModal(required){
-  document.getElementById('modals').innerHTML=`<div class="modal-bg" ${required?'':'onclick="if(event.target===this)closeModal()"'}><div class="modal">
-    <h3>${required?'Bienvenido — ¿Quién eres?':'Cambiar perfil'}</h3>
-    <div class="mfield"><label>Tu nombre</label><input type="text" id="u-nombre" value="${user.nombre}" placeholder="Ej: Laura Camila"></div>
-    <div class="mfield"><label>Rol</label>
-      <select id="u-rol">
-        <option value="analista" ${user.rol==='analista'?'selected':''}>Analista</option>
-        <option value="auxiliar" ${user.rol==='auxiliar'?'selected':''}>Auxiliar</option>
-        <option value="director" ${user.rol==='director'?'selected':''}>Director</option>
-      </select>
-    </div>
-    <div class="mbtns">
-      ${required?'':'<button onclick="closeModal()">Cancelar</button>'}
-      <button class="primary" onclick="confirmUser()">Guardar</button>
-    </div>
-  </div></div>`;
+  const m=document.getElementById('modals');
+  m.innerHTML='';
+  const bg=document.createElement('div');bg.className='modal-bg';
+  if(!required)bg.onclick=function(e){if(e.target===bg)closeModal();};
+  const box=document.createElement('div');box.className='modal';
+  box.innerHTML='<h3>'+(required?'Bienvenido':'Cambiar perfil')+'</h3>'+
+    '<div class="mfield"><label>Tu nombre</label><input type="text" id="u-nombre" value="'+user.nombre+'" placeholder="Ej: Laura Camila"></div>'+
+    '<div class="mfield"><label>Rol</label><select id="u-rol">'+
+      '<option value="analista"'+(user.rol==='analista'?' selected':'')+'>Analista</option>'+
+      '<option value="auxiliar"'+(user.rol==='auxiliar'?' selected':'')+'>Auxiliar</option>'+
+      '<option value="director"'+(user.rol==='director'?' selected':'')+'>Director</option>'+
+    '</select></div>'+
+    '<div class="mbtns">'+(required?'':'<button onclick="closeModal()">Cancelar</button>')+
+    '<button class="primary" onclick="confirmUser()">Guardar</button></div>';
+  bg.appendChild(box);m.appendChild(bg);
 }
 function confirmUser(){
   const n=document.getElementById('u-nombre').value.trim();
@@ -223,18 +216,18 @@ async function loadAll(){
   }catch(e){console.error(e);setSyncDot(false);}
 }
 async function createCase(data){
-  const maxOrden=cases.filter(c=>!c.archivado).length;
-  const {data:nc,error}=await sb.from('casos').insert([{...data,orden:maxOrden,creado_por:user.nombre}]).select().single();
+  const maxO=cases.filter(c=>!c.archivado).length;
+  const {data:nc,error}=await sb.from('casos').insert([{...data,orden:maxO,creado_por:user.nombre}]).select().single();
   if(error){alert('Error: '+error.message);return;}
   const tipo=data.tipo||'pendiente';
-  const aItems=ITEMS_ANALISTA.filter(l=>!(l==='Flujo de caja'&&tipo==='sin_flujo')).map((l,i)=>({caso_id:nc.id,tipo:'analista',label:l,done:false,comment:'',fixed:true,orden:i}));
-  const auxItems=ITEMS_AUXILIAR.map((l,i)=>({caso_id:nc.id,tipo:'auxiliar',label:l,done:false,comment:'',fixed:true,orden:i}));
-  await sb.from('caso_checklist').insert([...aItems,...auxItems]);
+  const ai=IA.filter(l=>!(l==='Flujo de caja'&&tipo==='sin_flujo')).map((l,i)=>({caso_id:nc.id,tipo:'analista',label:l,done:false,comment:'',fixed:true,orden:i}));
+  const ui=IU.map((l,i)=>({caso_id:nc.id,tipo:'auxiliar',label:l,done:false,comment:'',fixed:true,orden:i}));
+  await sb.from('caso_checklist').insert([...ai,...ui]);
   await loadAll();
 }
 async function upCase(id,data){await sb.from('casos').update(data).eq('id',id);}
 async function upItem(id,data){await sb.from('caso_checklist').update(data).eq('id',id);}
-async function addItem(casoId,tipo,label){
+async function addCLItem(casoId,tipo,label){
   const items=(checklists[casoId]&&checklists[casoId][tipo])||[];
   const {data}=await sb.from('caso_checklist').insert([{caso_id:casoId,tipo,label,done:false,comment:'',fixed:false,orden:items.length}]).select().single();
   return data;
@@ -242,45 +235,32 @@ async function addItem(casoId,tipo,label){
 async function delItem(id){await sb.from('caso_checklist').delete().eq('id',id);}
 async function delCase(id){await sb.from('casos').delete().eq('id',id);await loadAll();}
  
-// SLA
+// SLA & DOC
 function hoy(){return new Date().toISOString().split('T')[0];}
 function diasDesde(f){if(!f)return null;return Math.floor((Date.now()-new Date(f).getTime())/864e5);}
-function docYGccOk(caso){
+function docGccOk(caso){
   const cl=checklists[caso.id];
-  const docItem=cl&&cl.analista&&cl.analista.find(x=>x.label==='Documentación');
-  return docItem&&docItem.done&&caso.gcc_propio==='completo'&&caso.gcc_riesgo==='completo';
+  const d=cl&&cl.analista&&cl.analista.find(x=>x.label==='Documentación');
+  return d&&d.done&&caso.gcc_propio==='completo'&&caso.gcc_riesgo==='completo';
 }
 function slaInfo(caso){
   if(caso.estado==='en_espera')return{cls:'sla-none badge',txt:'Sin iniciar'};
   const t=TIPOS[caso.tipo];if(!t||!t.sla)return{cls:'sla-none badge',txt:'SLA por definir'};
-  if(!docYGccOk(caso)||!caso.fecha_doc_completa)return{cls:'sla-paused badge',txt:'SLA pausado'};
+  if(!docGccOk(caso)||!caso.fecha_doc_completa)return{cls:'sla-paused badge',txt:'SLA pausado'};
   const d=diasDesde(caso.fecha_doc_completa),sla=t.sla;
   if(d>sla)return{cls:'sla-over badge',txt:'Vencido +'+(d-sla)+'d'};
   if(d===sla)return{cls:'sla-warn badge',txt:'Vence hoy'};
   if(sla>1&&d===sla-1)return{cls:'sla-warn badge',txt:'Día '+d+'/'+sla};
   return{cls:'sla-ok badge',txt:'Día '+d+'/'+sla};
 }
- 
-// DOC STATUS — derived from auxiliar checklist
-function getDocEstado(casoId, fechaRevision){
-  const items=(checklists[casoId]&&checklists[casoId]['auxiliar'])||[];
-  if(!items.length||!fechaRevision)return 'sin_iniciar';
-  const total=items.length, done=items.filter(x=>x.done).length;
-  if(done===total)return 'completo';
-  if(done>0||fechaRevision)return 'incompleto';
-  return 'en_revision';
-}
-function calcDocEstado(casoId, fechaRevision){
-  const items=(checklists[casoId]&&checklists[casoId]['auxiliar'])||[];
-  if(!fechaRevision)return 'sin_iniciar';
-  const total=items.length, done=items.filter(x=>x.done).length;
-  if(done===total&&total>0)return 'completo';
+function calcDocEst(casoId,fechaRev){
+  const items=(checklists[casoId]&&checklists[casoId].auxiliar)||[];
+  if(!fechaRev)return 'sin_iniciar';
+  const done=items.filter(x=>x.done).length;
+  if(done===items.length&&items.length>0)return 'completo';
   return 'incompleto';
 }
-function getPendingDocs(casoId){
-  const items=(checklists[casoId]&&checklists[casoId]['auxiliar'])||[];
-  return items.filter(x=>!x.done);
-}
+function getPending(casoId){return((checklists[casoId]&&checklists[casoId].auxiliar)||[]).filter(x=>!x.done);}
 function checkProg(casoId,tipo){
   const items=(checklists[casoId]&&checklists[casoId][tipo])||[];
   if(!items.length)return 0;
@@ -288,222 +268,201 @@ function checkProg(casoId,tipo){
 }
  
 // RENDER
-function setSyncDot(on){const d=document.getElementById('sync-dot');if(d){d.className='sync-dot'+(on?'':' off');d.title=on?'Conectado':'Sin conexión';}}
+function setSyncDot(on){const d=document.getElementById('sync-dot');if(d){d.className='sync-dot'+(on?'':' off');}}
 function render(){renderStats();if(activeTab==='activos')renderActivos();else if(activeTab==='devueltos')renderDevueltos();else renderWM();}
 function renderStats(){
-  const activos=cases.filter(c=>!c.archivado);
-  const venc=activos.filter(c=>slaInfo(c).cls.includes('sla-over')).length;
-  document.getElementById('stats').innerHTML=`
-    <div class="stat"><b>${activos.length}</b> activos</div>
-    <div class="stat"><b>${activos.filter(c=>c.estado==='en_espera').length}</b> en espera</div>
-    <div class="stat"><b>${activos.filter(c=>['en_proceso','por_comite','esperando_decision'].includes(c.estado)).length}</b> en proceso</div>
-    ${venc?`<div class="stat" style="background:#FCEBEB;color:#791F1F"><b>${venc}</b> SLA vencido</div>`:''}
-  `;
+  const act=cases.filter(c=>!c.archivado);
+  const venc=act.filter(c=>slaInfo(c).cls.includes('sla-over')).length;
+  document.getElementById('stats').innerHTML=
+    '<div class="stat"><b>'+act.length+'</b> activos</div>'+
+    '<div class="stat"><b>'+act.filter(c=>c.estado==='en_espera').length+'</b> en espera</div>'+
+    '<div class="stat"><b>'+act.filter(c=>['en_proceso','por_comite','esperando_decision'].includes(c.estado)).length+'</b> en proceso</div>'+
+    (venc?'<div class="stat" style="background:#FCEBEB;color:#791F1F"><b>'+venc+'</b> SLA vencido</div>':'');
 }
 function renderActivos(){
   const el=document.getElementById('view-activos');
-  const activos=cases.filter(c=>!c.archivado);
-  if(!activos.length){el.innerHTML='<div class="empty">No hay casos activos.</div>';return;}
-  el.innerHTML=activos.map((c,i)=>cardHTML(c,i)).join('');
+  const act=cases.filter(c=>!c.archivado);
+  if(!act.length){el.innerHTML='<div class="empty">No hay casos activos.</div>';return;}
+  el.innerHTML=act.map((c,i)=>cardHTML(c,i)).join('');
 }
  
 function cardHTML(c,i){
-  const est=ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera;
+  const est=EA[c.estado]||EA.en_espera;
   const sla=slaInfo(c);
-  const docEst=calcDocEstado(c.id,c.fecha_revision);
-  const docBadge=DOC_ESTADOS[docEst]||DOC_ESTADOS.sin_iniciar;
+  const docEst=calcDocEst(c.id,c.fecha_revision);
+  const db=DE[docEst]||DE.sin_iniciar;
   const sec=openSecs[c.id]||'datos';
   const ap=checkProg(c.id,'analista');
   const xp=checkProg(c.id,'auxiliar');
-  const pendDocs=getPendingDocs(c.id);
+  const pend=getPending(c.id);
+  const isAux=user.rol==='auxiliar'||user.rol==='director';
+  const isAna=user.rol==='analista'||user.rol==='director';
  
-  // Tabs según rol
-  let tabsHTML='<button class="stab'+(sec==='datos'?' active':'')+'" onclick="switchSec(''+c.id+'','datos',this)">Datos</button>';
-  if(user.rol==='auxiliar'||user.rol==='director'){
-    tabsHTML+='<button class="stab'+(sec==='aux'?' active':'')+'" onclick="switchSec(''+c.id+'','aux',this)">Revisión documental'+(xp?' ('+xp+'%)':'')+'</button>';
-    tabsHTML+='<button class="stab'+(sec==='correo'?' active':'')+'" onclick="switchSec(''+c.id+'','correo',this)">Correo</button>';
+  let html='<div class="client-card '+est.color+'" id="card-'+c.id+'">';
+ 
+  // HEADER
+  html+='<div class="card-head" onclick="toggleCard(\''+c.id+'\')">'+
+    '<div class="card-left">'+
+      '<div class="card-title-row">'+
+        '<span class="card-name">'+c.nombre+(c.prioridad?'<span class="priotag">PRIORIDAD</span>':'')+'</span>'+
+        '<span class="card-nit">'+(c.nit||'')+'</span>'+
+      '</div>'+
+      '<div class="card-roles-row" id="roles-'+c.id+'">'+
+        '<span class="role-status"><b>Analista:</b> '+(c.analista_nombre||'Sin asignar')+
+          ' &middot; <span class="badge" style="background:'+est.bg+';color:'+est.c+';padding:1px 6px">'+est.label+'</span></span>'+
+        '<span class="role-status"><b>Auxiliar:</b> '+(c.auxiliar_nombre||'Sin asignar')+
+          ' &middot; <span class="badge" style="background:'+db.bg+';color:'+db.c+';padding:1px 6px">'+db.label+'</span></span>'+
+      '</div>'+
+    '</div>'+
+    '<div class="card-right">'+
+      '<span class="'+sla.cls+'" id="slabadge-'+c.id+'">'+sla.txt+'</span>'+
+      '<span class="arrow" id="arrow-'+c.id+'">&#9660;</span>'+
+    '</div>'+
+  '</div>';
+ 
+  // BODY
+  html+='<div class="card-body'+(openCards[c.id]?' open':'')+'" id="body-'+c.id+'">';
+ 
+  // TABS
+  html+='<div class="stabs">';
+  html+='<button class="stab'+(sec==='datos'?' active':'')+'" data-id="'+c.id+'" data-sec="datos" onclick="switchSec(this)">Datos</button>';
+  if(isAux){
+    html+='<button class="stab'+(sec==='aux'?' active':'')+'" data-id="'+c.id+'" data-sec="aux" onclick="switchSec(this)">Revisión documental'+(xp?' ('+xp+'%)':'')+'</button>';
+    html+='<button class="stab'+(sec==='correo'?' active':'')+'" data-id="'+c.id+'" data-sec="correo" onclick="switchSec(this)">Correo</button>';
   }
-  if(user.rol==='analista'||user.rol==='director'){
-    tabsHTML+='<button class="stab'+(sec==='checklist'?' active':'')+'" onclick="switchSec(''+c.id+'','checklist',this)">Checklist'+(ap?' ('+ap+'%)':'')+'</button>';
-    tabsHTML+='<button class="stab'+(sec==='comite'?' active':'')+'" onclick="switchSec(''+c.id+'','comite',this)">Comité</button>';
-    tabsHTML+='<button class="stab'+(sec==='info'?' active':'')+'" onclick="switchSec(''+c.id+'','info',this)">Información</button>';
+  if(isAna){
+    html+='<button class="stab'+(sec==='checklist'?' active':'')+'" data-id="'+c.id+'" data-sec="checklist" onclick="switchSec(this)">Checklist'+(ap?' ('+ap+'%)':'')+'</button>';
+    html+='<button class="stab'+(sec==='comite'?' active':'')+'" data-id="'+c.id+'" data-sec="comite" onclick="switchSec(this)">Comité</button>';
+    html+='<button class="stab'+(sec==='info'?' active':'')+'" data-id="'+c.id+'" data-sec="info" onclick="switchSec(this)">Información</button>';
+  }
+  html+='</div>';
+ 
+  // SEC DATOS
+  html+='<div id="sec-datos-'+c.id+'" style="display:'+(sec==='datos'?'block':'none')+'">';
+  // Assignment row
+  html+='<div class="assign-row">';
+  html+='<div class="assign-box"><div class="al">Analista</div><div class="an'+(c.analista_nombre?'':' empty')+'">'+(c.analista_nombre||'Sin asignar')+'</div></div>';
+  if(!c.analista_nombre&&isAna)html+='<button class="btn-asign" data-id="'+c.id+'" data-rol="analista" onclick="asignarme(this)">Asignarme</button>';
+  if(c.analista_nombre===user.nombre)html+='<button class="btn-desasign" data-id="'+c.id+'" data-rol="analista" onclick="desasignarme(this)">Desasignarme</button>';
+  html+='<div class="assign-box"><div class="al">Analista de revisión documentos</div><div class="an'+(c.auxiliar_nombre?'':' empty')+'">'+(c.auxiliar_nombre||'Sin asignar')+'</div></div>';
+  if(!c.auxiliar_nombre&&isAux)html+='<button class="btn-asign" data-id="'+c.id+'" data-rol="auxiliar" onclick="asignarme(this)">Asignarme</button>';
+  if(c.auxiliar_nombre===user.nombre)html+='<button class="btn-desasign" data-id="'+c.id+'" data-rol="auxiliar" onclick="desasignarme(this)">Desasignarme</button>';
+  html+='</div>';
+  // Fields grid
+  html+='<div class="grid2">';
+  html+='<div><label class="fl">Razón social</label><input type="text" value="'+esc(c.nombre||'')+'" data-id="'+c.id+'" data-field="nombre" onchange="fieldChange(this)"></div>';
+  html+='<div><label class="fl">NIT</label><input type="text" value="'+esc(c.nit||'')+'" data-id="'+c.id+'" data-field="nit" onchange="fieldChange(this)"></div>';
+  html+='<div><label class="fl">Gerente de cuenta</label><input type="text" value="'+esc(c.gerente_cuenta||'')+'" data-id="'+c.id+'" data-field="gerente_cuenta" onchange="fieldChange(this)"></div>';
+  html+='<div><label class="fl">Fecha de radicación</label><input type="date" value="'+(c.fecha_inicio||'')+'" data-id="'+c.id+'" data-field="fecha_inicio" onchange="fieldChange(this)"></div>';
+  html+='<div><label class="fl">Fecha inicio revisión</label><div style="display:flex;gap:6px;align-items:center"><input type="date" value="'+(c.fecha_revision||'')+'" disabled style="flex:1">';
+  if(!c.fecha_revision&&isAux)html+='<button class="btn-iniciar" data-id="'+c.id+'" onclick="iniciarRevision(this)">Iniciar revisión</button>';
+  html+='</div></div>';
+  html+='<div><label class="fl">Fecha documentación completa</label><input type="date" value="'+(c.fecha_doc_completa||'')+'" disabled></div>';
+  html+='</div>';
+  // Doc status box
+  html+='<div class="doc-box"><div class="ds-label">Estado documentación</div>';
+  html+='<span class="badge" style="background:'+db.bg+';color:'+db.c+'">'+db.label+'</span>';
+  if(pend.length){
+    html+='<div class="doc-pending"><div style="font-size:11px;color:#888;margin-bottom:4px">Documentos pendientes:</div>';
+    pend.forEach(function(p){html+='<div class="doc-pending-item">&middot; '+p.label+(p.comment?' &mdash; '+p.comment:'')+'</div>';});
+    html+='</div>';
+  }
+  html+='</div>';
+  // Analista controls
+  if(isAna){
+    html+='<div class="grid2">';
+    html+='<div><label class="fl">Estado del estudio</label><select data-id="'+c.id+'" data-field="estado" onchange="fieldChange(this)">';
+    Object.keys(EA).forEach(function(k){html+='<option value="'+k+'"'+(c.estado===k?' selected':'')+'>'+EA[k].label+'</option>';});
+    html+='</select></div>';
+    html+='<div><label class="fl">Tipo de cliente</label><select data-id="'+c.id+'" data-field="tipo" onchange="fieldChange(this)">';
+    Object.keys(TIPOS).forEach(function(k){html+='<option value="'+k+'"'+(c.tipo===k?' selected':'')+'>'+TIPOS[k].label+'</option>';});
+    html+='</select></div>';
+    html+='<div><label class="fl">GCC mi parte</label><select data-id="'+c.id+'" data-field="gcc_propio" onchange="gccChange(this)">';
+    ['pendiente','incompleto','completo'].forEach(function(v){html+='<option value="'+v+'"'+((c.gcc_propio||'pendiente')===v?' selected':'')+'>'+v.charAt(0).toUpperCase()+v.slice(1)+'</option>';});
+    html+='</select></div>';
+    html+='<div><label class="fl">GCC Riesgo/Jurídico</label><select data-id="'+c.id+'" data-field="gcc_riesgo" onchange="gccChange(this)">';
+    ['pendiente','incompleto','completo'].forEach(function(v){html+='<option value="'+v+'"'+((c.gcc_riesgo||'pendiente')===v?' selected':'')+'>'+v.charAt(0).toUpperCase()+v.slice(1)+'</option>';});
+    html+='</select></div>';
+    html+='<div><label class="fl">Doc+GCC completo desde</label><input type="date" id="fdoc-'+c.id+'" value="'+(c.fecha_doc_completa||'')+'" '+(docGccOk(c)?'':'disabled')+' data-id="'+c.id+'" data-field="fecha_doc_completa" onchange="fieldChange(this)"></div>';
+    html+='<div><label class="fl">Prioridad</label><select data-id="'+c.id+'" data-field="prioridad" onchange="prioChange(this)"><option value="false"'+(!c.prioridad?' selected':'')+'>No</option><option value="true"'+(c.prioridad?' selected':'')+'>Sí</option></select></div>';
+    html+='</div>';
+    html+='<div class="action-row"><button data-id="'+c.id+'" onclick="moveUp(this)">&#8593;</button><button data-id="'+c.id+'" onclick="moveDown(this)">&#8595;</button><span class="spacer"></span>';
+    html+='<button class="btn-del" data-id="'+c.id+'" onclick="confirmDelete(this)">Eliminar</button>';
+    html+='<button class="btn-dev" data-id="'+c.id+'" onclick="showDevModal(this)">Caso devuelto</button>';
+    html+='<button class="btn-wm" data-id="'+c.id+'" onclick="cargarWM(this)">Cargar en WM &#10003;</button>';
+    html+='</div>';
+  } else {
+    html+='<div class="action-row"><span class="spacer"></span><button class="btn-dev" data-id="'+c.id+'" onclick="showDevModal(this)">Caso devuelto</button></div>';
+  }
+  html+='</div>'; // end sec-datos
+ 
+  // SEC AUX
+  if(isAux){
+    html+='<div id="sec-aux-'+c.id+'" style="display:'+(sec==='aux'?'block':'none')+'">';
+    html+='<div style="font-size:11px;color:#888;margin-bottom:4px">Marca cada documento. Si falta algo deja un comentario.</div>';
+    html+='<div class="pb-wrap"><div class="pb" id="pb-aux-'+c.id+'" style="width:'+xp+'%"></div></div>';
+    html+='<div id="cl-aux-'+c.id+'">'+renderCL(c.id,'auxiliar')+'</div>';
+    html+='<div class="add-row"><input type="text" id="addinp-aux-'+c.id+'" placeholder="Agregar documento..." data-id="'+c.id+'" data-tipo="auxiliar"><button data-id="'+c.id+'" data-tipo="auxiliar" onclick="addItemBtn(this)">+</button></div>';
+    html+='</div>';
+ 
+    html+='<div id="sec-correo-'+c.id+'" style="display:'+(sec==='correo'?'block':'none')+'">';
+    html+='<div style="font-size:11px;color:#888;margin-bottom:8px">Texto listo para copiar en Outlook.</div>';
+    html+='<div class="email-box" id="emailbox-'+c.id+'">'+buildEmail(c)+'</div>';
+    html+='<div style="display:flex;align-items:center;gap:8px;margin-top:8px"><button class="btn-copy" data-id="'+c.id+'" onclick="copyEmail(this)">Copiar texto</button><span class="copy-ok" id="copyok-'+c.id+'">Copiado</span></div>';
+    html+='</div>';
   }
  
-  return `<div class="client-card ${est.color}" id="card-${c.id}">
-  <div class="card-head" onclick="toggleCard('${c.id}')">
-    <div class="card-left">
-      <div class="card-title-row">
-        <span class="card-name">${c.nombre}${c.prioridad?'<span class="priotag">PRIORIDAD</span>':''}</span>
-        <span class="card-nit">${c.nit||''}</span>
-      </div>
-      <div class="card-roles-row">
-        <span class="role-status"><b>Analista:</b> ${c.analista_nombre||'Sin asignar'} · <span class="badge" style="background:${est.bg};color:${est.c};padding:1px 6px">${est.label}</span></span>
-        <span class="role-status"><b>Auxiliar:</b> ${c.auxiliar_nombre||'Sin asignar'} · <span class="badge" style="background:${docBadge.bg};color:${docBadge.c};padding:1px 6px">${docBadge.label}</span></span>
-      </div>
-    </div>
-    <div class="card-right">
-      <span class="${sla.cls}" id="slabadge-${c.id}">${sla.txt}</span>
-      <span class="arrow" id="arrow-${c.id}">▼</span>
-    </div>
-  </div>
-  <div class="card-body${openCards[c.id]?' open':''}" id="body-${c.id}">
-    <div class="stabs">${tabsHTML}</div>
+  // SEC ANALISTA
+  if(isAna){
+    html+='<div id="sec-checklist-'+c.id+'" style="display:'+(sec==='checklist'?'block':'none')+'">';
+    html+='<div class="pb-wrap"><div class="pb" id="pb-an-'+c.id+'" style="width:'+ap+'%"></div></div>';
+    html+='<div id="cl-an-'+c.id+'">'+renderCL(c.id,'analista')+'</div>';
+    html+='<div class="add-row"><input type="text" id="addinp-an-'+c.id+'" placeholder="Agregar ítem..." data-id="'+c.id+'" data-tipo="analista"><button data-id="'+c.id+'" data-tipo="analista" onclick="addItemBtn(this)">+</button></div>';
+    html+='</div>';
  
-    <div id="sec-datos-${c.id}" style="display:${sec==='datos'?'block':'none'}">
-      <div class="assign-row">
-        <div class="assign-box">
-          <div class="alabel">Analista</div>
-          <div class="aname ${c.analista_nombre?'':'empty'}">${c.analista_nombre||'Sin asignar'}</div>
-        </div>
-        ${!c.analista_nombre&&(user.rol==='analista'||user.rol==='director')?`<button class="btn-asign" onclick="asignarme('${c.id}','analista')">Asignarme</button>`:''}
-        ${c.analista_nombre===user.nombre?`<button class="btn-desasign" onclick="desasignarme('${c.id}','analista')">Desasignarme</button>`:''}
-        <div class="assign-box">
-          <div class="alabel">Analista de revisión documentos</div>
-          <div class="aname ${c.auxiliar_nombre?'':'empty'}">${c.auxiliar_nombre||'Sin asignar'}</div>
-        </div>
-        ${!c.auxiliar_nombre&&(user.rol==='auxiliar'||user.rol==='director')?`<button class="btn-asign" onclick="asignarme('${c.id}','auxiliar')">Asignarme</button>`:''}
-        ${c.auxiliar_nombre===user.nombre?`<button class="btn-desasign" onclick="desasignarme('${c.id}','auxiliar')">Desasignarme</button>`:''}
-      </div>
-      <div class="grid2">
-        <div><label class="fl">Razón social</label><input type="text" value="${c.nombre||''}" onchange="fieldChange('${c.id}','nombre',this.value)"></div>
-        <div><label class="fl">NIT</label><input type="text" value="${c.nit||''}" onchange="fieldChange('${c.id}','nit',this.value)"></div>
-        <div><label class="fl">Gerente de cuenta</label><input type="text" value="${c.gerente_cuenta||''}" onchange="fieldChange('${c.id}','gerente_cuenta',this.value)"></div>
-        <div><label class="fl">Fecha de radicación</label><input type="date" value="${c.fecha_inicio||''}" onchange="fieldChange('${c.id}','fecha_inicio',this.value)"></div>
-        <div><label class="fl">Fecha inicio revisión documental</label>
-          <div style="display:flex;gap:6px;align-items:center">
-            <input type="date" value="${c.fecha_revision||''}" disabled style="opacity:0.6;flex:1">
-            ${!c.fecha_revision&&(user.rol==='auxiliar'||user.rol==='director')?`<button class="btn-iniciar" style="white-space:nowrap" onclick="iniciarRevision('${c.id}')">Iniciar revisión</button>`:''}
-          </div>
-        </div>
-        <div><label class="fl">Fecha documentación completa</label><input type="date" value="${c.fecha_doc_completa||''}" disabled style="opacity:0.6"></div>
-      </div>
-      <div class="doc-status-box">
-        <div class="ds-label">Documentación</div>
-        <span class="badge" style="background:${docBadge.bg};color:${docBadge.c}">${docBadge.label}</span>
-        ${pendDocs.length?`<div class="doc-pending-list">
-          <div style="font-size:11px;color:#888;margin-bottom:4px">Documentos pendientes:</div>
-          ${pendDocs.map(p=>`<div class="doc-pending-item">· ${p.label}${p.comment?' — '+p.comment:''}</div>`).join('')}
-        </div>`:''}
-      </div>
-      ${user.rol==='analista'||user.rol==='director'?`
-      <div class="grid2">
-        <div><label class="fl">Estado del estudio</label>
-          <select onchange="fieldChange('${c.id}','estado',this.value)">${Object.keys(ESTADOS_ANALISTA).map(k=>`<option value="${k}"${c.estado===k?' selected':''}>${ESTADOS_ANALISTA[k].label}</option>`).join('')}</select>
-        </div>
-        <div><label class="fl">Tipo de cliente</label>
-          <select onchange="fieldChange('${c.id}','tipo',this.value)">${Object.keys(TIPOS).map(k=>`<option value="${k}"${c.tipo===k?' selected':''}>${TIPOS[k].label}</option>`).join('')}</select>
-        </div>
-        <div><label class="fl">GCC mi parte</label>
-          <select onchange="gccChange('${c.id}','gcc_propio',this.value)">
-            <option value="pendiente" ${(c.gcc_propio||'pendiente')==='pendiente'?'selected':''}>Pendiente</option>
-            <option value="incompleto" ${c.gcc_propio==='incompleto'?'selected':''}>Incompleto</option>
-            <option value="completo" ${c.gcc_propio==='completo'?'selected':''}>Completo</option>
-          </select>
-        </div>
-        <div><label class="fl">GCC Riesgo/Jurídico</label>
-          <select onchange="gccChange('${c.id}','gcc_riesgo',this.value)">
-            <option value="pendiente" ${(c.gcc_riesgo||'pendiente')==='pendiente'?'selected':''}>Pendiente</option>
-            <option value="incompleto" ${c.gcc_riesgo==='incompleto'?'selected':''}>Incompleto</option>
-            <option value="completo" ${c.gcc_riesgo==='completo'?'selected':''}>Completo</option>
-          </select>
-        </div>
-        <div><label class="fl">Doc+GCC completo desde</label><input type="date" id="fdoc-${c.id}" value="${c.fecha_doc_completa||''}" ${!docYGccOk(c)||c.estado==='en_espera'?'disabled style="opacity:0.5"':''} onchange="fieldChange('${c.id}','fecha_doc_completa',this.value)"></div>
-        <div><label class="fl">Prioridad</label>
-          <select onchange="fieldChange('${c.id}','prioridad',this.value==='true')">
-            <option value="false" ${!c.prioridad?'selected':''}>No</option>
-            <option value="true" ${c.prioridad?'selected':''}>Sí</option>
-          </select>
-        </div>
-      </div>
-      <div class="action-row">
-        <button onclick="moveUp('${c.id}')">↑</button>
-        <button onclick="moveDown('${c.id}')">↓</button>
-        <span class="spacer"></span>
-        <button class="btn-del" onclick="confirmDelete('${c.id}')">Eliminar</button>
-        <button class="btn-dev" onclick="showDevModal('${c.id}')">Caso devuelto</button>
-        <button class="btn-wm" onclick="cargarWM('${c.id}')">Cargar en WM ✓</button>
-      </div>`:''}
-      ${user.rol==='auxiliar'?`<div class="action-row"><span class="spacer"></span><button class="btn-dev" onclick="showDevModal('${c.id}')">Caso devuelto</button></div>`:''}
-    </div>
+    html+='<div id="sec-comite-'+c.id+'" style="display:'+(sec==='comite'?'block':'none')+'">';
+    html+='<div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Puntos para presentar en comité</div>';
+    html+='<textarea class="notabox" placeholder="Puntos clave, argumentos, decisión verbal..." data-id="'+c.id+'" data-field="nota_comite" onchange="fieldChange(this)">'+(c.nota_comite||'')+'</textarea>';
+    html+='</div>';
  
-    <div id="sec-aux-${c.id}" style="display:${sec==='aux'?'block':'none'}">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">Marca cada documento como completo. Si falta algo deja un comentario.</div>
-      <div class="pb-wrap"><div class="pb" id="pb-aux-${c.id}" style="width:${xp}%"></div></div>
-      <div id="cl-aux-${c.id}">${renderCL(c.id,'auxiliar')}</div>
-      <div class="add-row">
-        <input type="text" id="add-aux-${c.id}" placeholder="Agregar documento adicional..." onkeydown="if(event.key==='Enter')addItemUI('${c.id}','auxiliar')">
-        <button onclick="addItemUI('${c.id}','auxiliar')">+</button>
-      </div>
-    </div>
+    html+='<div id="sec-info-'+c.id+'" style="display:'+(sec==='info'?'block':'none')+'">';
+    html+='<div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Información del caso</div>';
+    html+='<textarea class="notabox" placeholder="Preguntas, análisis, observaciones..." data-id="'+c.id+'" data-field="nota_info" onchange="fieldChange(this)">'+(c.nota_info||'')+'</textarea>';
+    html+='</div>';
+  }
  
-    <div id="sec-correo-${c.id}" style="display:${sec==='correo'?'block':'none'}">
-      <div style="font-size:11px;color:#888;margin-bottom:8px">Texto listo para copiar en Outlook con los documentos pendientes.</div>
-      <div class="email-box" id="emailbox-${c.id}">${buildEmail(c)}</div>
-      <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
-        <button class="btn-copy" onclick="copyEmail('${c.id}')">Copiar texto</button>
-        <span class="copy-ok" id="copyok-${c.id}">Copiado</span>
-      </div>
-    </div>
- 
-    <div id="sec-checklist-${c.id}" style="display:${sec==='checklist'?'block':'none'}">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">Checklist de progreso del estudio.</div>
-      <div class="pb-wrap"><div class="pb" id="pb-an-${c.id}" style="width:${ap}%"></div></div>
-      <div id="cl-an-${c.id}">${renderCL(c.id,'analista')}</div>
-      <div class="add-row">
-        <input type="text" id="add-an-${c.id}" placeholder="Agregar ítem adicional..." onkeydown="if(event.key==='Enter')addItemUI('${c.id}','analista')">
-        <button onclick="addItemUI('${c.id}','analista')">+</button>
-      </div>
-    </div>
- 
-    <div id="sec-comite-${c.id}" style="display:${sec==='comite'?'block':'none'}">
-      <div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Puntos para presentar en comité</div>
-      <textarea class="notabox" placeholder="Puntos clave, argumentos, decisión verbal recibida..." onchange="fieldChange('${c.id}','nota_comite',this.value)">${c.nota_comite||''}</textarea>
-    </div>
- 
-    <div id="sec-info-${c.id}" style="display:${sec==='info'?'block':'none'}">
-      <div style="font-size:12px;font-weight:500;color:#666;margin-bottom:6px">Información del caso</div>
-      <textarea class="notabox" placeholder="Preguntas al cliente, análisis, observaciones..." onchange="fieldChange('${c.id}','nota_info',this.value)">${c.nota_info||''}</textarea>
-    </div>
-  </div>
-</div>`;
+  html+='</div></div>'; // close card-body and card
+  return html;
 }
+ 
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
  
 function renderCL(casoId,tipo){
   const items=(checklists[casoId]&&checklists[casoId][tipo])||[];
-  return items.map(it=>`<div class="check-item">
-    <div class="check-head">
-      <input type="checkbox" id="cb-${it.id}" ${it.done?'checked':''} onchange="toggleItem('${casoId}','${it.id}','${tipo}',this.checked)">
-      <label class="clabel${it.done?' done':''}" for="cb-${it.id}">${it.label}</label>
-      ${!it.fixed?`<button class="del-check btn-del" onclick="removeItemUI('${casoId}','${it.id}','${tipo}')">✕</button>`:''}
-    </div>
-    ${!it.done?`<div class="check-comment"><input type="text" placeholder="¿Qué falta?" value="${(it.comment||'').replace(/"/g,'&quot;')}" onchange="commentChange('${it.id}','${casoId}','${tipo}',this.value)"></div>`:''}
-  </div>`).join('');
+  return items.map(function(it){
+    let h='<div class="check-item"><div class="check-head">';
+    h+='<input type="checkbox" id="cb-'+it.id+'" '+(it.done?'checked':'')+' data-casoid="'+casoId+'" data-itemid="'+it.id+'" data-tipo="'+tipo+'" onchange="toggleItem(this)">';
+    h+='<label class="clabel'+(it.done?' done':'')+'" for="cb-'+it.id+'">'+it.label+'</label>';
+    if(!it.fixed)h+='<button class="del-check btn-del" data-casoid="'+casoId+'" data-itemid="'+it.id+'" data-tipo="'+tipo+'" onclick="removeItemUI(this)">&#10005;</button>';
+    h+='</div>';
+    if(!it.done)h+='<div class="check-comment"><input type="text" placeholder="&#191;Qu&#233; falta?" value="'+esc(it.comment||'')+'" data-itemid="'+it.id+'" data-casoid="'+casoId+'" data-tipo="'+tipo+'" onchange="commentChange(this)"></div>';
+    h+='</div>';
+    return h;
+  }).join('');
 }
  
 function buildEmail(caso){
-  const items=(checklists[caso.id]&&checklists[caso.id]['auxiliar'])||[];
-  const pend=items.filter(x=>!x.done);
+  const pend=getPending(caso.id);
   if(!pend.length)return 'No hay documentos pendientes.';
   const lines=['Buen día,','','Revisando la documentación de la compañía en asunto, hace falta lo siguiente para dar continuidad al estudio:',''];
-  pend.forEach((x,i)=>{
-    let line=(i+1)+'. ';
-    if(x.comment)line+=x.label+': '+x.comment;
-    else line+=x.label;
-    lines.push(line);
+  pend.forEach(function(x,i){
+    lines.push((i+1)+'. '+x.label+(x.comment?': '+x.comment:''));
   });
   lines.push('','Quedo atenta, muchas gracias.');
-  return lines.join('
-');
-}
-function copyEmail(id){
-  const el=document.getElementById('emailbox-'+id);if(!el)return;
-  navigator.clipboard.writeText(el.innerText).then(()=>{
-    const ok=document.getElementById('copyok-'+id);
-    if(ok){ok.style.opacity='1';setTimeout(()=>ok.style.opacity='0',2000);}
-  });
+  return lines.join('\n');
 }
  
-// EVENTS
+// EVENT HANDLERS using data attributes
 function toggleCard(id){
   openCards[id]=!openCards[id];
   const body=document.getElementById('body-'+id);
@@ -511,153 +470,148 @@ function toggleCard(id){
   if(body)body.classList.toggle('open',openCards[id]);
   if(arrow)arrow.style.transform=openCards[id]?'rotate(180deg)':'';
 }
-function switchSec(id,sec,el){
+function switchSec(el){
+  const id=el.dataset.id, sec=el.dataset.sec;
   openSecs[id]=sec;
-  ['datos','aux','correo','checklist','comite','info'].forEach(s=>{
-    const d=document.getElementById('sec-'+s+'-'+id);if(d)d.style.display=s===sec?'block':'none';
-  });
-  el.closest('.stabs').querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
+  const allSecs=['datos','aux','correo','checklist','comite','info'];
+  allSecs.forEach(function(s){const d=document.getElementById('sec-'+s+'-'+id);if(d)d.style.display=s===sec?'block':'none';});
+  el.closest('.stabs').querySelectorAll('.stab').forEach(function(t){t.classList.remove('active');});
   el.classList.add('active');
-  if(sec==='correo'){const box=document.getElementById('emailbox-'+id);const c=cases.find(x=>x.id===id);if(box&&c)box.innerText=buildEmail(c);}
+  if(sec==='correo'){const box=document.getElementById('emailbox-'+id);const c=cases.find(function(x){return x.id===id;});if(box&&c)box.innerText=buildEmail(c);}
 }
-async function fieldChange(id,field,val){
-  const c=cases.find(x=>x.id===id);if(!c)return;
+async function fieldChange(el){
+  const id=el.dataset.id, field=el.dataset.field;
+  let val=el.value;
+  const c=cases.find(function(x){return x.id===id;});if(!c)return;
   c[field]=val;
   await upCase(id,{[field]:val});
-  refreshCard(id);renderStats();
+  if(field==='estado'){const est=EA[val]||EA.en_espera;const card=document.getElementById('card-'+id);if(card)card.className='client-card '+est.color;refreshRoles(id);}
+  refreshSLA(id);renderStats();
 }
-async function gccChange(id,field,val){
-  const c=cases.find(x=>x.id===id);if(!c)return;
-  c[field]=val;
-  await upCase(id,{[field]:val});
-  if(docYGccOk(c)&&!c.fecha_doc_completa&&c.estado!=='en_espera'){
-    const t=hoy();c.fecha_doc_completa=t;
-    await upCase(id,{fecha_doc_completa:t});
-    const fd=document.getElementById('fdoc-'+id);if(fd){fd.value=t;fd.disabled=false;fd.style.opacity='1';}
+async function prioChange(el){
+  const id=el.dataset.id, val=el.value==='true';
+  const c=cases.find(function(x){return x.id===id;});if(!c)return;
+  c.prioridad=val;await upCase(id,{prioridad:val});
+}
+async function gccChange(el){
+  const id=el.dataset.id, field=el.dataset.field, val=el.value;
+  const c=cases.find(function(x){return x.id===id;});if(!c)return;
+  c[field]=val;await upCase(id,{[field]:val});
+  if(docGccOk(c)&&!c.fecha_doc_completa&&c.estado!=='en_espera'){
+    const t=hoy();c.fecha_doc_completa=t;await upCase(id,{fecha_doc_completa:t});
+    const fd=document.getElementById('fdoc-'+id);if(fd){fd.value=t;fd.disabled=false;}
   }
   refreshSLA(id);
 }
-async function iniciarRevision(casoId){
-  const c=cases.find(x=>x.id===casoId);if(!c)return;
-  const t=hoy();c.fecha_revision=t;
-  await upCase(casoId,{fecha_revision:t});
-  await loadAll();
+async function iniciarRevision(el){
+  const id=el.dataset.id;const c=cases.find(function(x){return x.id===id;});if(!c)return;
+  const t=hoy();c.fecha_revision=t;await upCase(id,{fecha_revision:t});await loadAll();
 }
-async function toggleItem(casoId,itemId,tipo,done){
-  const c=cases.find(x=>x.id===casoId);
+async function toggleItem(el){
+  const casoId=el.dataset.casoid, itemId=el.dataset.itemid, tipo=el.dataset.tipo, done=el.checked;
+  const c=cases.find(function(x){return x.id===casoId;});
   const cl=checklists[casoId]&&checklists[casoId][tipo];
-  const item=cl&&cl.find(x=>x.id===itemId);if(!item)return;
+  const item=cl&&cl.find(function(x){return x.id===itemId;});if(!item)return;
   item.done=done;if(done)item.comment='';
-  await upItem(itemId,{done,comment:''});
+  await upItem(itemId,{done:done,comment:''});
   if(tipo==='analista'&&item.label==='Documentación'){
-    if(done&&docYGccOk(c)&&!c.fecha_doc_completa&&c.estado!=='en_espera'){
-      const t=hoy();c.fecha_doc_completa=t;await upCase(casoId,{fecha_doc_completa:t});
-    }
+    if(done&&docGccOk(c)&&!c.fecha_doc_completa&&c.estado!=='en_espera'){const t=hoy();c.fecha_doc_completa=t;await upCase(casoId,{fecha_doc_completa:t});}
     if(!done){c.fecha_doc_completa='';await upCase(casoId,{fecha_doc_completa:''});}
     refreshSLA(casoId);
   }
-  // Update doc status when auxiliar marks items
   if(tipo==='auxiliar'){
-    const newDocEst=calcDocEstado(casoId,c.fecha_revision);
-    if(newDocEst==='completo'&&!c.fecha_doc_aux_completa){
-      const t=hoy();c.fecha_doc_aux_completa=t;
-      await upCase(casoId,{fecha_doc_completa:t});
-    }
+    const docEst=calcDocEst(casoId,c.fecha_revision);
+    if(docEst==='completo'&&!c.fecha_doc_completa){const t=hoy();c.fecha_doc_completa=t;await upCase(casoId,{fecha_doc_completa:t});}
     refreshDocStatus(casoId);
   }
-  const elAn=document.getElementById('cl-an-'+casoId);if(elAn&&tipo==='analista')elAn.innerHTML=renderCL(casoId,tipo);
-  const elAux=document.getElementById('cl-aux-'+casoId);if(elAux&&tipo==='auxiliar')elAux.innerHTML=renderCL(casoId,tipo);
-  const pbKey=tipo==='analista'?'pb-an-':'pb-aux-';
-  const bar=document.getElementById(pbKey+casoId);if(bar)bar.style.width=checkProg(casoId,tipo)+'%';
+  const clEl=document.getElementById('cl-'+(tipo==='analista'?'an':'aux')+'-'+casoId);
+  if(clEl)clEl.innerHTML=renderCL(casoId,tipo);
+  const bar=document.getElementById('pb-'+(tipo==='analista'?'an':'aux')+'-'+casoId);
+  if(bar)bar.style.width=checkProg(casoId,tipo)+'%';
 }
-async function commentChange(itemId,casoId,tipo,val){
+async function commentChange(el){
+  const itemId=el.dataset.itemid, casoId=el.dataset.casoid, tipo=el.dataset.tipo, val=el.value;
   const cl=checklists[casoId]&&checklists[casoId][tipo];
-  const item=cl&&cl.find(x=>x.id===itemId);if(item)item.comment=val;
+  const item=cl&&cl.find(function(x){return x.id===itemId;});if(item)item.comment=val;
   await upItem(itemId,{comment:val});
   if(tipo==='auxiliar')refreshDocStatus(casoId);
 }
+async function asignarme(el){
+  const id=el.dataset.id, rol=el.dataset.rol;
+  const field=rol==='analista'?'analista_nombre':'auxiliar_nombre';
+  const c=cases.find(function(x){return x.id===id;});if(!c)return;
+  c[field]=user.nombre;await upCase(id,{[field]:user.nombre});refreshRoles(id);await loadAll();
+}
+async function desasignarme(el){
+  const id=el.dataset.id, rol=el.dataset.rol;
+  const field=rol==='analista'?'analista_nombre':'auxiliar_nombre';
+  const c=cases.find(function(x){return x.id===id;});if(!c)return;
+  c[field]='';await upCase(id,{[field]:''});refreshRoles(id);await loadAll();
+}
+function addItemBtn(el){addItemUI(el.dataset.id,el.dataset.tipo);}
 async function addItemUI(casoId,tipo){
-  const key=tipo==='auxiliar'?'add-aux-'+casoId:'add-an-'+casoId;
-  const inp=document.getElementById(key);if(!inp||!inp.value.trim())return;
+  const inp=document.getElementById('addinp-'+(tipo==='auxiliar'?'aux':'an')+'-'+casoId);
+  if(!inp||!inp.value.trim())return;
   const label=inp.value.trim();inp.value='';
-  const newItem=await addItem(casoId,tipo,label);
+  const newItem=await addCLItem(casoId,tipo,label);
   if(newItem){if(!checklists[casoId])checklists[casoId]={analista:[],auxiliar:[]};checklists[casoId][tipo].push(newItem);}
-  const elKey=tipo==='analista'?'cl-an-':'cl-aux-';
-  const el=document.getElementById(elKey+casoId);if(el)el.innerHTML=renderCL(casoId,tipo);
+  const el=document.getElementById('cl-'+(tipo==='analista'?'an':'aux')+'-'+casoId);
+  if(el)el.innerHTML=renderCL(casoId,tipo);
 }
-async function removeItemUI(casoId,itemId,tipo){
+async function removeItemUI(el){
+  const casoId=el.dataset.casoid, itemId=el.dataset.itemid, tipo=el.dataset.tipo;
   await delItem(itemId);
-  if(checklists[casoId]&&checklists[casoId][tipo])checklists[casoId][tipo]=checklists[casoId][tipo].filter(x=>x.id!==itemId);
-  const elKey=tipo==='analista'?'cl-an-':'cl-aux-';
-  const el=document.getElementById(elKey+casoId);if(el)el.innerHTML=renderCL(casoId,tipo);
+  if(checklists[casoId]&&checklists[casoId][tipo])checklists[casoId][tipo]=checklists[casoId][tipo].filter(function(x){return x.id!==itemId;});
+  const clEl=document.getElementById('cl-'+(tipo==='analista'?'an':'aux')+'-'+casoId);
+  if(clEl)clEl.innerHTML=renderCL(casoId,tipo);
 }
-async function asignarme(casoId,rol){
-  const field=rol==='analista'?'analista_nombre':'auxiliar_nombre';
-  const c=cases.find(x=>x.id===casoId);if(!c)return;
-  c[field]=user.nombre;await upCase(casoId,{[field]:user.nombre});refreshCard(casoId);
+function copyEmail(el){
+  const id=el.dataset.id;
+  const box=document.getElementById('emailbox-'+id);if(!box)return;
+  navigator.clipboard.writeText(box.innerText).then(function(){
+    const ok=document.getElementById('copyok-'+id);
+    if(ok){ok.style.opacity='1';setTimeout(function(){ok.style.opacity='0';},2000);}
+  });
 }
-async function desasignarme(casoId,rol){
-  const field=rol==='analista'?'analista_nombre':'auxiliar_nombre';
-  const c=cases.find(x=>x.id===casoId);if(!c)return;
-  c[field]='';await upCase(casoId,{[field]:''});refreshCard(casoId);
-}
- 
-function refreshCard(id){
-  const c=cases.find(x=>x.id===id);if(!c)return;
-  const card=document.getElementById('card-'+id);if(!card)return;
-  const est=ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera;
-  card.className='client-card '+est.color;
-  refreshSLA(id);
-}
-function refreshSLA(id){
-  const c=cases.find(x=>x.id===id);if(!c)return;
-  const sla=slaInfo(c);
-  const b=document.getElementById('slabadge-'+id);
-  if(b){b.textContent=sla.txt;b.className=sla.cls;}
-}
+function refreshSLA(id){const c=cases.find(function(x){return x.id===id;});if(!c)return;const sla=slaInfo(c);const b=document.getElementById('slabadge-'+id);if(b){b.textContent=sla.txt;b.className=sla.cls;}}
 function refreshDocStatus(casoId){
-  const c=cases.find(x=>x.id===casoId);if(!c)return;
-  const docEst=calcDocEstado(casoId,c.fecha_revision);
-  const docBadge=DOC_ESTADOS[docEst]||DOC_ESTADOS.sin_iniciar;
-  const card=document.getElementById('card-'+casoId);if(!card)return;
-  const rolesRow=card.querySelector('.card-roles-row');if(!rolesRow)return;
-  rolesRow.innerHTML=`
-    <span class="role-status"><b>Analista:</b> ${c.analista_nombre||'Sin asignar'} · <span class="badge" style="background:${(ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera).bg};color:${(ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera).c};padding:1px 6px">${(ESTADOS_ANALISTA[c.estado]||ESTADOS_ANALISTA.en_espera).label}</span></span>
-    <span class="role-status"><b>Auxiliar:</b> ${c.auxiliar_nombre||'Sin asignar'} · <span class="badge" style="background:${docBadge.bg};color:${docBadge.c};padding:1px 6px">${docBadge.label}</span></span>
-  `;
+  const c=cases.find(function(x){return x.id===casoId;});if(!c)return;
+  const docEst=calcDocEst(casoId,c.fecha_revision);const db=DE[docEst]||DE.sin_iniciar;
+  const est=EA[c.estado]||EA.en_espera;
+  const rolesEl=document.getElementById('roles-'+casoId);
+  if(rolesEl)rolesEl.innerHTML='<span class="role-status"><b>Analista:</b> '+(c.analista_nombre||'Sin asignar')+' &middot; <span class="badge" style="background:'+est.bg+';color:'+est.c+';padding:1px 6px">'+est.label+'</span></span><span class="role-status"><b>Auxiliar:</b> '+(c.auxiliar_nombre||'Sin asignar')+' &middot; <span class="badge" style="background:'+db.bg+';color:'+db.c+';padding:1px 6px">'+db.label+'</span></span>';
 }
- 
-async function moveUp(id){
-  const activos=cases.filter(c=>!c.archivado);
-  const ai=activos.findIndex(x=>x.id===id);if(ai<=0)return;
-  const cur=activos[ai],prev=activos[ai-1];
-  const tmp=cur.orden;
-  await upCase(id,{orden:prev.orden});await upCase(prev.id,{orden:tmp});
-  await loadAll();
+function refreshRoles(id){refreshDocStatus(id);}
+async function moveUp(el){
+  const id=el.dataset.id;
+  const act=cases.filter(function(c){return !c.archivado;});
+  const ai=act.findIndex(function(x){return x.id===id;});if(ai<=0)return;
+  const cur=act[ai],prev=act[ai-1];const tmp=cur.orden;
+  await upCase(id,{orden:prev.orden});await upCase(prev.id,{orden:tmp});await loadAll();
 }
-async function moveDown(id){
-  const activos=cases.filter(c=>!c.archivado);
-  const ai=activos.findIndex(x=>x.id===id);if(ai<0||ai>=activos.length-1)return;
-  const cur=activos[ai],next=activos[ai+1];
-  const tmp=cur.orden;
-  await upCase(id,{orden:next.orden});await upCase(next.id,{orden:tmp});
-  await loadAll();
+async function moveDown(el){
+  const id=el.dataset.id;
+  const act=cases.filter(function(c){return !c.archivado;});
+  const ai=act.findIndex(function(x){return x.id===id;});if(ai<0||ai>=act.length-1)return;
+  const cur=act[ai],next=act[ai+1];const tmp=cur.orden;
+  await upCase(id,{orden:next.orden});await upCase(next.id,{orden:tmp});await loadAll();
 }
-async function cargarWM(id){
-  const now=new Date();
+async function cargarWM(el){
+  const id=el.dataset.id;const now=new Date();
   await upCase(id,{archivado:true,tipo_cierre:'wm',fecha_cierre:now.toLocaleDateString('es-CO'),anio_wm:now.getFullYear(),mes_wm:now.getMonth()+1});
   await loadAll();
 }
-function showDevModal(id){
-  const c=cases.find(x=>x.id===id);if(!c)return;
-  document.getElementById('modals').innerHTML=`<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
-    <h3>Registrar devolución</h3>
-    <p style="font-size:13px;color:#888;margin-bottom:1rem">${c.nombre}${c.nit?' — '+c.nit:''}</p>
-    <div class="mfield"><label>Motivo</label><input type="text" id="dev-motivo" placeholder="Ej: Falta documentación, GCC pendiente..."></div>
-    <div class="mfield"><label>¿Qué faltó?</label><textarea id="dev-notas" style="width:100%;min-height:80px;border:0.5px solid #ccc;border-radius:8px;padding:8px;font-size:12px;background:#fff;resize:vertical"></textarea></div>
-    <div class="mbtns"><button onclick="closeModal()">Cancelar</button>
-    <button style="background:#FCEBEB;color:#791F1F;border-color:#E24B4A" onclick="confirmDev('${id}')">Confirmar</button></div>
-  </div></div>`;
+function showDevModal(el){
+  const id=el.dataset.id;const c=cases.find(function(x){return x.id===id;});if(!c)return;
+  const m=document.getElementById('modals');m.innerHTML='';
+  const bg=document.createElement('div');bg.className='modal-bg';bg.onclick=function(e){if(e.target===bg)closeModal();};
+  const box=document.createElement('div');box.className='modal';
+  box.innerHTML='<h3>Registrar devolución</h3>'+
+    '<p style="font-size:13px;color:#888;margin-bottom:1rem">'+c.nombre+(c.nit?' — '+c.nit:'')+'</p>'+
+    '<div class="mfield"><label>Motivo</label><input type="text" id="dev-motivo" placeholder="Ej: Falta documentación..."></div>'+
+    '<div class="mfield"><label>¿Qué faltó?</label><textarea id="dev-notas" style="width:100%;min-height:80px;border:0.5px solid #ccc;border-radius:8px;padding:8px;font-size:12px;background:#fff;resize:vertical"></textarea></div>'+
+    '<div class="mbtns"><button onclick="closeModal()">Cancelar</button><button style="background:#FCEBEB;color:#791F1F;border-color:#E24B4A" onclick="confirmDev(\''+id+'\')">Confirmar</button></div>';
+  bg.appendChild(box);m.appendChild(bg);
 }
 async function confirmDev(id){
   const motivo=document.getElementById('dev-motivo').value.trim();
@@ -666,75 +620,76 @@ async function confirmDev(id){
   await upCase(id,{archivado:true,tipo_cierre:'devuelto',fecha_cierre:now.toLocaleDateString('es-CO'),motivo_devolucion:motivo,notas_devolucion:notas,anio_wm:now.getFullYear(),mes_wm:now.getMonth()+1});
   closeModal();await loadAll();
 }
-async function confirmDelete(id){if(!confirm('¿Eliminar este caso?'))return;await delCase(id);}
+async function confirmDelete(el){
+  if(!confirm('¿Eliminar este caso?'))return;await delCase(el.dataset.id);
+}
 async function reactivar(id){
   await upCase(id,{archivado:false,tipo_cierre:null,fecha_cierre:null,estado:'en_espera'});await loadAll();
 }
  
 function renderDevueltos(){
   const el=document.getElementById('view-devueltos');
-  const devueltos=cases.filter(c=>c.archivado&&c.tipo_cierre==='devuelto');
+  const devueltos=cases.filter(function(c){return c.archivado&&c.tipo_cierre==='devuelto';});
   if(!devueltos.length){el.innerHTML='<div class="empty">No hay casos devueltos.</div>';return;}
-  el.innerHTML=devueltos.map(c=>`<div class="arch-item">
-    <div class="arch-head" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span style="font-weight:500;flex:1">${c.nombre}</span>
-      <span style="color:#888">${c.nit||''}</span>
-      <span class="badge" style="background:#FCEBEB;color:#791F1F">Devuelto ${c.fecha_cierre||''}</span>
-      ${c.motivo_devolucion?`<span style="font-size:11px;color:#791F1F">${c.motivo_devolucion}</span>`:''}
-      <span style="font-size:10px;color:#aaa">▼</span>
-    </div>
-    <div class="arch-body">
-      ${c.notas_devolucion?`<div style="margin-bottom:8px"><div style="font-size:11px;color:#888;margin-bottom:3px">Qué faltó:</div><div class="arch-notes">${c.notas_devolucion}</div></div>`:''}
-      <div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px">
-        <button onclick="reactivar('${c.id}')">Reactivar</button>
-        <button class="btn-del" onclick="confirmDelete('${c.id}')">Eliminar</button>
-      </div>
-    </div>
-  </div>`).join('');
+  el.innerHTML=devueltos.map(function(c){
+    return '<div class="arch-item"><div class="arch-head" onclick="this.nextElementSibling.classList.toggle(\'open\')">'+
+      '<span style="font-weight:500;flex:1">'+c.nombre+'</span>'+
+      '<span style="color:#888">'+(c.nit||'')+'</span>'+
+      '<span class="badge" style="background:#FCEBEB;color:#791F1F">Devuelto '+(c.fecha_cierre||'')+'</span>'+
+      (c.motivo_devolucion?'<span style="font-size:11px;color:#791F1F">'+c.motivo_devolucion+'</span>':'')+
+      '<span style="font-size:10px;color:#aaa">&#9660;</span></div>'+
+      '<div class="arch-body">'+
+      (c.notas_devolucion?'<div style="margin-bottom:8px"><div style="font-size:11px;color:#888;margin-bottom:3px">Qué faltó:</div><div class="arch-notes">'+c.notas_devolucion+'</div></div>':'')+
+      '<div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px">'+
+      '<button onclick="reactivar(\''+c.id+'\')">Reactivar</button>'+
+      '<button class="btn-del" onclick="if(confirm(\'¿Eliminar?\'))delCase(\''+c.id+'\')">Eliminar</button></div></div></div>';
+  }).join('');
 }
 function renderWM(){
   const el=document.getElementById('view-wm');
-  const wm=cases.filter(c=>c.archivado&&c.tipo_cierre==='wm');
+  const wm=cases.filter(function(c){return c.archivado&&c.tipo_cierre==='wm';});
   if(!wm.length){el.innerHTML='<div class="empty">Aún no hay casos cargados en WM.</div>';return;}
   const groups={};
-  wm.forEach(c=>{const k=`${c.anio_wm}-${String(c.mes_wm).padStart(2,'0')}`;if(!groups[k])groups[k]=[];groups[k].push(c);});
-  el.innerHTML=Object.keys(groups).sort().reverse().map(k=>{
-    const[y,m]=k.split('-');
-    return `<div style="margin-bottom:1rem"><div class="arch-group-title">${MESES[parseInt(m)-1]} ${y} (${groups[k].length})</div>
-    ${groups[k].map(c=>`<div class="arch-item"><div class="arch-head" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span style="font-weight:500;flex:1">${c.nombre}</span>
-      <span style="font-size:12px;color:#888">${c.nit||''}</span>
-      <span class="badge" style="background:#E1F5EE;color:#085041">WM ${c.fecha_cierre||''}</span>
-      <span style="font-size:10px;color:#aaa">▼</span>
-    </div>
-    <div class="arch-body">
-      ${c.nota_comite?`<div style="margin-bottom:6px"><div style="font-size:11px;color:#888;margin-bottom:2px">Comité:</div><div class="arch-notes">${c.nota_comite}</div></div>`:''}
-      <div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px">
-        <button onclick="reactivar('${c.id}')">Restaurar</button>
-        <button class="btn-del" onclick="confirmDelete('${c.id}')">Eliminar</button>
-      </div>
-    </div></div>`).join('')}</div>`;
+  wm.forEach(function(c){const k=c.anio_wm+'-'+String(c.mes_wm).padStart(2,'0');if(!groups[k])groups[k]=[];groups[k].push(c);});
+  el.innerHTML=Object.keys(groups).sort().reverse().map(function(k){
+    const parts=k.split('-');
+    return '<div style="margin-bottom:1rem"><div class="arch-group-title">'+MESES[parseInt(parts[1])-1]+' '+parts[0]+' ('+groups[k].length+')</div>'+
+      groups[k].map(function(c){
+        return '<div class="arch-item"><div class="arch-head" onclick="this.nextElementSibling.classList.toggle(\'open\')">'+
+          '<span style="font-weight:500;flex:1">'+c.nombre+'</span>'+
+          '<span style="font-size:12px;color:#888">'+(c.nit||'')+'</span>'+
+          '<span class="badge" style="background:#E1F5EE;color:#085041">WM '+(c.fecha_cierre||'')+'</span>'+
+          '<span style="font-size:10px;color:#aaa">&#9660;</span></div>'+
+          '<div class="arch-body">'+
+          (c.nota_comite?'<div style="margin-bottom:6px"><div style="font-size:11px;color:#888;margin-bottom:2px">Comité:</div><div class="arch-notes">'+c.nota_comite+'</div></div>':'')+
+          '<div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px">'+
+          '<button onclick="reactivar(\''+c.id+'\')">Restaurar</button>'+
+          '<button class="btn-del" onclick="if(confirm(\'¿Eliminar?\'))delCase(\''+c.id+'\')">Eliminar</button></div></div></div>';
+      }).join('')+'</div>';
   }).join('');
 }
  
-function switchTab(tab,el){
-  activeTab=tab;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
-  ['activos','devueltos','wm'].forEach(t=>{document.getElementById('view-'+t).style.display=t===tab?'block':'none';});
+function switchTab(el){
+  activeTab=el.dataset.tab;
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+  ['activos','devueltos','wm'].forEach(function(t){document.getElementById('view-'+t).style.display=t===activeTab?'block':'none';});
   render();
 }
 function closeModal(){document.getElementById('modals').innerHTML='';}
  
 function showNewCaseModal(){
   const today=hoy();
-  document.getElementById('modals').innerHTML=`<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
-    <h3>Nuevo caso</h3>
-    <div class="mfield"><label>Razón social</label><input type="text" id="nc-nombre" placeholder="Ej: MEJOR CDT SAS"></div>
-    <div class="mfield"><label>NIT</label><input type="text" id="nc-nit" placeholder="Ej: 901495024"></div>
-    <div class="mfield"><label>Gerente de cuenta</label><input type="text" id="nc-gerente" placeholder="Nombre del gerente comercial"></div>
-    <div class="mfield"><label>Fecha de radicación</label><input type="date" id="nc-fecha" value="${today}"></div>
-    <div class="mbtns"><button onclick="closeModal()">Cancelar</button><button class="primary" onclick="submitNewCase()">Crear caso</button></div>
-  </div></div>`;
+  const m=document.getElementById('modals');m.innerHTML='';
+  const bg=document.createElement('div');bg.className='modal-bg';bg.onclick=function(e){if(e.target===bg)closeModal();};
+  const box=document.createElement('div');box.className='modal';
+  box.innerHTML='<h3>Nuevo caso</h3>'+
+    '<div class="mfield"><label>Razón social</label><input type="text" id="nc-nombre" placeholder="Ej: MEJOR CDT SAS"></div>'+
+    '<div class="mfield"><label>NIT</label><input type="text" id="nc-nit" placeholder="Ej: 901495024"></div>'+
+    '<div class="mfield"><label>Gerente de cuenta</label><input type="text" id="nc-gerente" placeholder="Nombre del gerente"></div>'+
+    '<div class="mfield"><label>Fecha de radicación</label><input type="date" id="nc-fecha" value="'+today+'"></div>'+
+    '<div class="mbtns"><button onclick="closeModal()">Cancelar</button><button class="primary" onclick="submitNewCase()">Crear caso</button></div>';
+  bg.appendChild(box);m.appendChild(bg);
 }
 async function submitNewCase(){
   const nombre=document.getElementById('nc-nombre').value.trim();
@@ -744,30 +699,33 @@ async function submitNewCase(){
     gerente_cuenta:document.getElementById('nc-gerente').value.trim(),
     fecha_inicio:document.getElementById('nc-fecha').value,
     tipo:'pendiente',estado:'en_espera',
-    gcc_propio:'pendiente',gcc_riesgo:'pendiente',
-    prioridad:false,fecha_doc_completa:'',fecha_revision:'',
-    nota_comite:'',nota_info:'',
-    analista_nombre: user.rol==='analista'?user.nombre:'',
-    auxiliar_nombre: user.rol==='auxiliar'?user.nombre:''
+    gcc_propio:'pendiente',gcc_riesgo:'pendiente',prioridad:false,
+    fecha_doc_completa:'',fecha_revision:'',nota_comite:'',nota_info:'',
+    analista_nombre:user.rol==='analista'?user.nombre:'',
+    auxiliar_nombre:user.rol==='auxiliar'?user.nombre:''
   };
   closeModal();await createCase(data);
 }
  
-// REALTIME
 function subscribeRealtime(){
-  sb.channel('tracker').on('postgres_changes',{event:'*',schema:'public',table:'casos'},()=>loadAll())
-    .on('postgres_changes',{event:'*',schema:'public',table:'caso_checklist'},()=>loadAll())
-    .subscribe(s=>setSyncDot(s==='SUBSCRIBED'));
+  sb.channel('tc').on('postgres_changes',{event:'*',schema:'public',table:'casos'},function(){loadAll();})
+    .on('postgres_changes',{event:'*',schema:'public',table:'caso_checklist'},function(){loadAll();})
+    .subscribe(function(s){setSyncDot(s==='SUBSCRIBED');});
 }
  
-// INIT
 async function init(){
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&e.target.matches('[data-tipo]')&&e.target.id&&e.target.id.startsWith('addinp')){
+      addItemUI(e.target.dataset.id,e.target.dataset.tipo);
+    }
+  });
   const hasUser=loadUser();
   if(!hasUser)showUserModal(true);
   await loadAll();
   subscribeRealtime();
 }
 init();
+ 
 </script>
 </body>
 </html>
